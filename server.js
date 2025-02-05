@@ -71,6 +71,6 @@ app.use('/admin',adminRoutes)
 
 connectDB()
 
-app.listen(3001,()=>{
-    console.log('server running on 3001');
+app.listen(5000,()=>{
+    console.log('server running on 5000');
 })
