@@ -1,0 +1,126 @@
+  <link rel="stylesheet" href="/styles/user/home.css">
+  {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+ <section class="dress-section section-padding">
+<div class="dress-heading-section">
+  <h3> Ordered Products</h3>
+  </div> 
+ 
+ <div class="dress-items-section">
+    {{#each products}}
+      
+    <div class="dress-item">
+    
+      <div class="dress-item-image">
+          <a href="/productdetails/{{productId}}" class="image-link"></a>
+         {{#each this.images}}
+    {{#if @first}}
+      
+        <img src="/{{this}}" alt="{{../title}}" />
+     
+    {{/if}}
+  {{/each}}
+ </a>
+      </div>
+       
+      <div class="dress-item-details">
+        <div class="dress-item-name">
+          <p>{{productName}}</p>
+        </div>
+        <div class="dress-item-price">
+          <p class="dress-item-price-amount">price : {{productPrice}}</p>
+          
+        </div>
+        <div class="dress-item-price">
+          <p class="dress-item-price-amount">quantity : {{this.quantity}}</p>
+          
+        </div>
+         <div class="dress-item-price">
+         <p class="dress-item-price-amount">total amount : {{this.amount}}</p>
+          
+        </div>
+        
+      
+
+      </div>
+     
+    </div>
+  
+     {{/each}}
+
+  </div>
+<div class="dress-heading-section">
+  <h3>Update Order Status</h3>
+  </div> 
+  <form action="{{basePath}}/admin/update/orderstatus/{{orderDocument._id}}" id="update-form" method="post">
+  <div class="order-status">
+    <div>
+  
+         <select class="select-box" name="status">
+           <option  value="{{status}}" >{{orderDocument.order.status}}</option>
+           <option  value="Pending" >Pending</option>
+           <option  value="In progress" >In Progress</option>
+           <option  value="Shipped" >Shipped</option>
+           <option  value="Delivered" >Delivered</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" id="update-btn" >update status</button>
+    </div>
+
+  </div>
+  </form>
+
+</section>
+
+<style>
+    .order-status{
+        display: flex;
+        gap: 2rem;
+        
+        align-items: flex-end;
+      
+    }
+    .select-box{
+        padding: 5px;
+        
+    }
+    .order-status button{
+        background-color: green;
+        color: white;
+        padding: 5px;
+    }
+</style>
+
+
+<script>
+  document.getElementById('update-btn').addEventListener('click', function (event) {
+    event.preventDefault(); 
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you want to update the order status?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, update it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        document.getElementById('update-form').submit();
+
+       
+        Swal.fire({
+          title: 'Updated!',
+          text: 'The order status has been updated successfully.',
+          icon: 'success',
+          timer: 2000,
+          showConfirmButton: false,
+        });
+      }
+    });
+  });
+</script>

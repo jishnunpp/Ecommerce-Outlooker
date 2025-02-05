@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/styles/user/otp.css">
+
+<main style="background-color: C7D2D6;">
+  {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+  {{!-- sign in page start --}}
+  <section class="otp-section section-padding">
+   <div class="otp-page">
+    <div class="otp">
+    
+    
+    <form action="/forgot-password" method="post" class="otp-form" onsubmit="return validateemail()">
+      <div class="input-feild">
+       <label  class="input-title" for="login" >Enter your Email Address</label><br>
+       <input class="otp-input" type="email" placeholder="enter your  email" id="email" name="email"><br>
+       <span style="color:red" id="email_error" class="error"></span>
+      </div>
+      
+      
+      
+      <button class="otp-btn" type="submit">Verify</button><br>
+    </form>
+   
+    <a href="/signup" style="all: unset;"><p class="otp-text">create new Account ?</p></a>
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- sign in page end --}}
+</main>
+
+<script>
+  function validateemail() {
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("email_error");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email validation
+
+    // Clear any previous error message
+    emailError.textContent = "";
+
+    // Check if the input is empty
+    if (!emailInput.value.trim()) {
+      emailError.textContent = "Email address is required.";
+      return false; // Prevent form submission
+    }
+
+    // Check if the input is a valid email
+    if (!emailPattern.test(emailInput.value.trim())) {
+      emailError.textContent = "Please enter a valid email address.";
+      return false; // Prevent form submission
+    }
+
+    // If all validations pass, return true to allow submission
+    return true;
+  }
+</script>
+

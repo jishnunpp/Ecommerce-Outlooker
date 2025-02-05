@@ -1,0 +1,65 @@
+
+
+<link rel="stylesheet" href="/styles/admin/users.css">
+<main>
+     {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+
+  {{!-- order history page start --}}
+    <div class="users-section">
+                <div class="users-table-section">
+                    <div class="users-table-content">
+                         <div class="users-table-content-heading">
+                              <h2>Order History</h2>
+                         </div>
+                          
+
+                        <table class="users-table">
+    <thead class="users-table-heading-box">
+        <tr >
+            <th class="users-table-item">Date</th>
+            <th class="users-table-item">Address</th>
+            <th class="users-table-item">Payment</th>
+             <th class="users-table-item">Discount</th>
+            <th class="users-table-item">Amount</th>
+            <th class="users-table-item">Status</th>
+             <th class="users-table-item">View</th>
+           
+           
+        </tr>
+    </thead>
+    <tbody class="users-table-data-box">
+        {{#each orderhistory}}
+        <tr class="table-row">
+            <td data-cell="Date" class="users-table-data-name">{{order.createdAt}}</td>
+            <td data-cell="Address" class="users-table-data-name">{{order.name}},{{order.housename}},{{order.streetaddress}},{{order.towncity}}</td>
+            <td data-cell="Payment" class="users-table-data-name">{{order.payment}}</td>
+            <td data-cell="Offer" class="users-table-data-name">₹{{order.discount}}</td>
+            <td data-cell="Amount" class="users-table-data-name">₹{{order.amount}}</td>
+            <td data-cell="Status" class="users-table-data" > <button style="color:white; background-color:green;">{{order.status}}</button></td>
+             <td data-cell="View" class="users-table-data">
+               <a href="/view-order/{{this.orderId}}"><button style="color:white; background-color:rgb(101, 179, 231);">View </button></a></td>
+           
+           
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+                       
+                   
+                    </div>
+                    
+                    
+
+                </div>
+                
+                
+     </div>
+     
+       
+{{!-- order history page end --}}
+</main>
+
+

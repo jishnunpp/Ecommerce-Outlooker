@@ -1,0 +1,527 @@
+.addproduct-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.addproduct-page{
+   
+    width: 750px;
+    height: 1300px;
+    margin: 2rem 0;
+   
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.addproduct-heading-section{
+  margin: 10px 0;  
+ 
+}
+
+.addproduct{
+ width: 700px; 
+ 
+}
+.addproduct-heading{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+.addproduct-form{
+    padding: 1rem 0;
+}
+.addproduct-input-name{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+}
+.addproduct-inputs{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.input-title-feild{
+  width: 100%;
+}
+.input-feild{
+    margin: 5px 0;
+    width: 300px;
+    
+}
+.input-title{
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.addproduct-input{
+    width: 300px;
+    height: 60px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+  
+}
+.file-name{
+  display: flex;
+}
+#image1 {
+    display: none;
+  }
+#images{
+    display: none;
+  }
+
+
+  /* Custom label styled as a button */
+  .custom-file-label {
+    background-color: #E9C714;
+    color: black;
+    font-weight: 600;
+    padding: 15px 20px;
+    border:none;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  /* Custom text display for selected file */
+ 
+.addproduct-edit-btn{
+    display: flex;
+    justify-content: center;
+}
+.addproduct-btn{
+    margin: 1rem 0;
+    width: 150px;
+    background-color: #FF6000;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.input-feild-button{
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width:800px){
+    .addproduct-page{
+       
+        width: 650px;
+        height: 1050px;
+        margin: 1rem 0;
+        
+        
+         
+    }
+    .addproduct{
+        width: 500px; 
+        
+       }
+       .input-feild{
+        margin: 5px 0;
+        width:100%;
+        
+    }
+       .addproduct-input{
+        width:100%;
+      
+      
+    }
+    .custom-file-label {
+        background-color: #E9C714;
+        color: black;
+        font-weight: 600;
+        padding: 15px 20px;
+        border:none;
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: inline-block;
+      }
+}
+
+@media screen and (max-width:700px){
+
+    .addproduct-page{
+       
+        width: 550px;
+        height: 1150px;
+        margin: 1rem 0;
+        
+        
+         
+    }
+    .addproduct{
+        width: 400px; 
+        
+       }
+    .addproduct-heading-section{
+        padding: 1rem ;
+    }
+    .addproduct-heading{
+        font-size: 20px;
+        font-weight: 700;
+       
+    }
+   .addproduct-inputs{
+    flex-direction: column;
+   }
+    .input-feild{
+        margin: 0;
+        padding: 0 1rem;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+    .input-title{
+        
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .addproduct-input{
+        width: 100%;
+        height: 45px;
+        
+      
+    }
+   
+    .addproduct-btn{
+        width: 130px;
+        height: 40px;
+      
+    }
+  
+}
+
+
+@media screen and (max-width:600px){
+
+    .addproduct-page{
+       
+        width: 350px;
+        height: 1100px;
+        margin: 1rem 0;
+        
+        
+         
+    }
+    .addproduct{
+        width: 300px; 
+        
+       }
+       .custom-file-label {
+        background-color: #E9C714;
+        color: black;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 15px ;
+        border:none;
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: inline-block;
+      }
+  
+  
+}
+
+/* 
+<link rel="stylesheet" href="/styles/admin/addproduct.css">
+<main>
+    <section>
+     {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+  </section>
+  {{!-- sign in page start --}}
+  <section class="addproduct-section section-padding">
+    <div class="addproduct-page">
+      
+       
+        
+      
+    <div class="addproduct">
+       <div class="addproduct-heading-section">
+              <h3 class="addproduct-heading">Add Product</h3>
+        </div>
+    
+    <form  class="addproduct-form"  action="/admin/addproduct" method="post" id="form" enctype="multipart/form-data">
+      <div class="input-feild">
+      <label  class="input-title" for="login">Title</label><br>
+      <input class="addproduct-input-name" type="text" placeholder=" product title" name="title" id="title" ><br>
+      <span style="color:red" id="title_error" class="error"></span>
+      </div>
+      <div class="input-feild">
+      <label  class="input-title" for="login">Description</label><br>
+      <input class="addproduct-input-name" type="text" placeholder=" product decription" name="description" id="description" ><br>
+      <span style="color:red" id="description_error" class="error"></span>
+      </div>
+
+       <div class="addproduct-inputs">
+         <div class="input-feild">
+         <label  class="input-title" for="login">Catogory</label><br>
+       
+         <select id="Catogory" class="addproduct-input">
+          {{#each category}}
+           <option value="volvo" name="catogory">{{catogoryname}}</option>
+         {{/each}} 
+        </select><br>
+         <span style="color:red" id="catogory_error" class="error"></span>
+         </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Price</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" product price" name="price" id="price"><br>
+          <span style="color:red" id="price_error" class="error"></span>
+         </div>
+       </div>
+
+        <div class="addproduct-inputs">
+          <div class="input-feild">
+          <label  class="input-title" for="login">Offer</label><br>
+          <input class="addproduct-input" type="number" placeholder=" product offer" name="offer" id="offer" ><br>
+          <span style="color:red" id="offer_error" class="error"></span>
+          </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Rating</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" product rating" name="rating" id="rating" ><br>
+          <span style="color:red" id="rating_error" class="error"></span>
+         </div>
+       </div>
+       <div class="addproduct-inputs">
+          <div class="input-feild">
+          <label class="input-title" for="login">Review</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" Review" name="review" id="review" ><br>
+          <span style="color:red" id="review_error" class="error"></span>
+         </div>
+         <div class="input-feild">
+          <label class="input-title" for="login">Stock</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" Stock" name="stock" id="stock" ><br>
+          <span style="color:red" id="stock_error" class="error"></span>
+         </div>
+       </div>
+        <div class="addproduct-inputs">
+          <div class="input-feild">
+          <label  class="input-title" for="login">Size</label><br>
+          <input class="addproduct-input" type="text" placeholder=" product size" name="size" id="size" ><br>
+          <span style="color:red" id="size_error" class="error"></span>
+          </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Meterial</label><br>
+          <input  class="addproduct-input" type="text" placeholder=" product meterial" name="meterial" id="meterial" ><br>
+          <span style="color:red" id="meterial_error" class="error"></span>
+         </div>
+       </div>
+
+         <div class="addproduct-inputs">
+               <div class="input-feild">
+                 <label class="input-title" for="images">Upload Images</label><br>
+                 <label for="images" class="custom-file-label">Choose Files</label>
+                 <span class="file-name" id="fileNames">No filess chosen</span>
+                 <input type="file" id="images" name="images" accept="image/*" multiple>
+                 <br>
+                <div id="previewContainer" style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;"></div>
+                <span style="color:red" id="images_error" class="error"></span>
+            </div>
+       </div>
+
+
+
+       
+     
+      <div class="addproduct-edit-btn">
+         <button class="addproduct-btn" type="submit">Submit</button><br>
+      </div>
+      
+      
+    </form>
+     
+
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- profile page end --}}
+
+
+  
+</main>
+
+
+<script>
+  document.getElementById('form').addEventListener('submit', function (event) {
+    // Prevent form submission
+    event.preventDefault();
+
+    const errorElements = document.querySelectorAll('.error');
+    errorElements.forEach((error) => (error.textContent = ''));
+
+    
+    const title = document.getElementById('title').value.trim();
+    const category = document.getElementById('catogory').value.trim();
+    const price = document.getElementById('price').value.trim();
+    const size = document.getElementById('size').value.trim();
+    const material = document.getElementById('meterial').value.trim();
+    const stock = document.getElementById('stock').value.trim();
+    const image1 = document.getElementById('image1').files[0];
+    const image2 = document.getElementById('image2').files[0];
+    const image3 = document.getElementById('image3').files[0];
+
+    let isValid = true;
+
+   
+    if (!title) {
+      document.getElementById('title_error').textContent = 'Title is required';
+      isValid = false;
+    }
+
+    if (!category) {
+      document.getElementById('catogory_error').textContent = 'Category is required';
+      isValid = false;
+    }
+
+    if (!price ) {
+      document.getElementById('price_error').textContent =
+        'Price is required';
+      isValid = false;
+    }
+
+    if (!size) {
+      document.getElementById('size_error').textContent = 'Size is required';
+      isValid = false;
+    }
+
+    if (!material) {
+      document.getElementById('meterial_error').textContent = 'Material is required';
+      isValid = false;
+    }
+
+    if (!stock) {
+      document.getElementById('stock_error').textContent = 'Stock is required';
+      isValid = false;
+    }
+
+    if (!image1) {
+      document.getElementById('image1_error').textContent =
+        'Main image is required';
+      isValid = false;
+    }
+
+    if (!image2) {
+      document.getElementById('image2_error').textContent = 'Image 2 is required';
+      isValid = false;
+    }
+
+    if (!image3) {
+      document.getElementById('image3_error').textContent = 'Image 3 is required';
+      isValid = false;
+    }
+
+  
+    if (isValid) {
+      
+      this.submit();
+    }
+  });
+</script>
+<script>
+  // Function to handle updating the span with the file name
+  function updateFileName(inputId, fileNameId) {
+    const input = document.getElementById(inputId);
+    const fileNameSpan = document.getElementById(fileNameId);
+
+    input.addEventListener('change', () => {
+      if (input.files.length > 0) {
+        fileNameSpan.textContent = input.files[0].name; // Update span with file name
+      } else {
+        fileNameSpan.textContent = 'No file chosen'; // Reset if no file chosen
+      }
+    });
+  }
+
+  // Apply the function for each file input
+  updateFileName('image1', 'fileName1');
+  updateFileName('image2', 'fileName2');
+  updateFileName('image3', 'fileName3');
+</script>
+
+<script>
+  document.getElementById('images').addEventListener('change', function (event) {
+  const files = event.target.files; // Get all selected files
+  const previewContainer = document.getElementById('previewContainer'); // Container for previews
+  const fileNameSpan = document.getElementById('fileNames'); // Span to display file names
+  const imageError = document.getElementById('images_error'); // Error message container
+
+  // Reset preview container, error messages, and file names
+  previewContainer.innerHTML = '';
+  fileNameSpan.textContent = 'No files chosen';
+  imageError.textContent = '';
+
+  if (files.length === 0) {
+    return;
+  }
+
+  // Update file names
+  fileNameSpan.textContent = Array.from(files).map(file => file.name).join(', ');
+
+  // Iterate through each file
+  Array.from(files).forEach(file => {
+    if (!file.type.startsWith('image/')) {
+      imageError.textContent = 'Please select only image files.';
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      // Create an image element for each file
+      const img = document.createElement('img');
+      img.src = e.target.result; // Set the preview image source
+      img.style.maxWidth = '100px'; // Set preview size
+      img.style.border = '1px solid #ddd';
+      img.style.borderRadius = '4px';
+      img.style.padding = '5px';
+      img.alt = 'Preview';
+
+      // Append the image to the preview container
+      previewContainer.appendChild(img);
+    };
+
+    reader.readAsDataURL(file); // Read the file as a data URL
+  });
+});
+
+</script> */
+
+/* <div class="input-feild">
+<label class="input-title" for="login">Main Image</label><br>
+<div id="mainImageWrapper" style="margin-top: 10px;">
+    <img id="mainImagePreview" src="/{{mainImagePath}}" alt="Main Image Preview" style="width: 80px; height: 100px;">
+    <button id="removeMainImage" style="width: 80px; border: none; padding: 5px 10px;">Remove</button>
+</div>
+</div>
+
+<!-- Sub Images -->
+<div class="input-feild">
+<label class="input-title" for="images">Sub Images</label><br>
+<div id="previewContainer" style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;">
+    {{#each subImagesPath}}
+    <img src="/{{this}}" alt="Sub Image" style="width: 80px; height: 100px;">
+    {{/each}}
+</div>
+</div> */

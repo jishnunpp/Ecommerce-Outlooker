@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="/styles/admin/addbanner.css">
+<main>
+    <section>
+   {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+  </section>
+  {{!-- sign in page start --}}
+  <section class="addbanner-section section-padding">
+    <div class="addbanner-page">
+      
+       
+        
+      
+    <div class="addbanner">
+       <div class="addbanner-heading-section">
+              <h3 class="addbanner-heading">Add New Coupen</h3>
+        </div>
+    
+ <form class="addbanner-form" action="/admin/addcoupen" method="post" id="form">
+  <div class="addbanner-inputs">
+    <div class="input-feild">
+      <label class="input-title" for="coupename">Coupen Name</label><br>
+      <input class="addbanner-input" type="text" placeholder="Coupen name" name="coupename" id="coupename"><br>
+      <span style="color:red" id="coupename_error" class="error"></span>
+    </div>
+    <div class="input-feild">
+      <label class="input-title" for="startdate">Start Date</label><br>
+      <input class="addbanner-input" type="date" placeholder="Start date" name="startdate" id="startdate"><br>
+      <span style="color:red" id="startdate_error" class="error"></span>
+    </div>
+  </div>
+
+  <div class="addbanner-inputs">
+    <div class="input-feild">
+      <label class="input-title" for="enddate">End Date</label><br>
+      <input class="addbanner-input" type="date" placeholder="End date" name="enddate" id="enddate"><br>
+      <span style="color:red" id="enddate_error" class="error"></span>
+    </div>
+    <div class="input-feild">
+      <label class="input-title" for="offerprice">Offer Price</label><br>
+      <input class="addbanner-input" type="number" placeholder="Offer price" name="offerprice" id="offerprice"><br>
+      <span style="color:red" id="offerprice_error" class="error"></span>
+    </div>
+  </div>
+
+  <div class="addbanner-inputs">
+    <div class="input-feild">
+      <label class="input-title" for="minprice">Minimum Price</label><br>
+      <input class="addbanner-input" type="number" placeholder="Minimum price" name="minprice" id="minprice"><br>
+      <span style="color:red" id="minprice_error" class="error"></span>
+    </div>
+  </div>
+
+  <div class="addbanner-btn">
+    <button type="submit">Submit</button><br>
+  </div>
+</form>
+     
+
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- profile page end --}}
+
+
+  
+</main>
+
+
+<script>
+
+  const startDateInput = document.getElementById('startdate');
+  const today = new Date().toISOString().split('T')[0];
+  startDateInput.value = today;
+
+
+  document.getElementById('form').addEventListener('submit', function (e) {
+    let isValid = true;
+
+ 
+    document.querySelectorAll('.error').forEach((el) => (el.textContent = ''));
+
+    
+    const coupename = document.getElementById('coupename').value.trim();
+    if (!coupename) {
+      document.getElementById('coupename_error').textContent = 'Coupen Name is required.';
+      isValid = false;
+    }
+
+  
+    const startdate = document.getElementById('startdate').value;
+    if (!startdate) {
+      document.getElementById('startdate_error').textContent = 'Start Date is required.';
+      isValid = false;
+    }
+
+
+    const enddate = document.getElementById('enddate').value;
+    if (!enddate) {
+      document.getElementById('enddate_error').textContent = 'End Date is required.';
+      isValid = false;
+    } else if (new Date(enddate) < new Date(startdate)) {
+      document.getElementById('enddate_error').textContent =
+        'End Date cannot be earlier than Start Date.';
+      isValid = false;
+    }
+
+  
+    const offerprice = document.getElementById('offerprice').value;
+    if (!offerprice ) {
+      document.getElementById('offerprice_error').textContent =
+        'Offer Price is required.';
+      isValid = false;
+    }
+
+
+    const minprice = document.getElementById('minprice').value;
+    if (!minprice ) {
+      document.getElementById('minprice_error').textContent =
+        'Minimum Price is required.';
+      isValid = false;
+    }
+
+    if (!isValid) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+

@@ -1,0 +1,208 @@
+.addbanner-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.addbanner-page{
+   
+    width: 850px;
+    height: 650px;
+    margin: 2rem 0;
+   
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.addbanner-heading-section{
+  margin: 10px 0;  
+ 
+}
+
+.addbanner{
+ width: 800px; 
+ 
+}
+.addbanner-heading{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+.addbanner-form{
+    padding: 1rem 0;
+}
+
+.addbanner-inputs{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.input-feild{
+    margin: 5px 0;
+ 
+    
+}
+.input-title{
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.addbanner-input{
+    width: 350px;
+    height: 60px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+  
+}
+#banner-image {
+    display: none;
+  }
+
+  /* Custom label styled as a button */
+  .custom-file-label {
+    background-color: #E9C714;
+    color: black;
+    font-weight: 600;
+    padding: 15px 20px;
+    border:none;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
+.addbanner-btn{
+    display: flex;
+    justify-content: center;
+}
+.addbanner-btn button{
+    margin: 1rem 0;
+    width: 150px;
+    background-color: #FF6000;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.input-feild-button{
+    display: flex;
+    justify-content: space-between;
+}
+#image1{
+    display: none;
+}
+@media screen and (max-width:800px){
+    .addbanner-page{
+       
+        width: 650px;
+        height: 600px;
+        margin: 1rem 0;
+        
+        
+         
+    }
+    .addbanner{
+        width: 500px; 
+        
+       }
+       .addbanner-input{
+        width:100%;
+      
+      
+    }
+}
+
+@media screen and (max-width:700px){
+
+    .addbanner-page{
+       
+        width: 650px;
+        height: 500px;
+        margin: 1rem 0;
+  
+    }
+    .addbanner{
+        width: 400px; 
+      
+       }
+    .addbanner-heading-section{
+        padding: 1rem ;
+    }
+    .addbanner-heading{
+        font-size: 20px;
+        font-weight: 700;
+       
+    }
+   .addbanner-inputs{
+    flex-direction: column;
+   }
+    .input-feild{
+        margin: 0;
+        padding: 0 1rem;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+    .input-title{
+        
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .addbanner-input{
+        width: 100%;
+        height: 45px;
+        
+      
+    }
+    .custom-file-label {
+        background-color: #E9C714;
+        color: black;
+        font-weight: 600;
+        padding: 15px 10px;
+        font-size: 12px;
+        border:none;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: inline-block;
+      }
+   
+    .addbanner-btn button{
+        width: 130px;
+        height: 40px;
+      
+    }
+  
+}
+
+
+@media screen and (max-width:600px){
+
+    .addbanner-page{
+       
+        width: 350px;
+        height: 600px;
+        margin: 2rem 0;
+        
+        
+         
+    }
+    .addbanner{
+        width: 300px; 
+        
+       }
+  
+  
+}
+
+
+

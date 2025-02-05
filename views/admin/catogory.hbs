@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="/styles/admin/catogory.css">
+<main>
+  <section>
+     {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+    
+  </section>
+
+
+  <section>
+      {{!-- catogory page start --}}
+    <div class="catogory-section">
+                <div class="catogory-table-section">
+                    <div class="catogory-table-content">
+                         <div class="catogory-head-box">
+                            <div class="catogory-heading">
+                             <h2>Catogory Management</h2>
+                           </div>
+                           <div class="catogory-btn">
+                            <a  href="/admin/addcatogory" all="unset"> <button>Add new catogory</button></a>
+                           
+                           </div>
+
+                         </div>
+                       
+                       <div class="catogory-table">
+                        <div class="catogory-table-heading-box">
+                            <div class="catogory-search">
+                                <form  action='/admin/catogory/search' method="get" class="form">
+                                     <input type="text" placeholder="search here" class="catogory-input" name="q" required>
+                                     <button type="submit" class="catogory-input-btn">search</button>
+
+                                </form>
+                              
+                               
+                            </div>
+                            <div class="catogory-table-headings">
+                                <span class="catogory-table-item-number">Number</span>
+                                <span class="catogory-table-item-name">Name</span>
+                                
+                                <span class="catogory-table-item-options">Options</span>
+
+                            </div>
+
+                        </div>
+                    {{#each catogory}}
+                        <div class="catogory-table-data-box">
+                                <span class="catogory-table-data-number">{{@index}}</span>
+                                <span class="catogory-table-data-name">{{catogoryname}}</span>
+                                
+                               
+                                <span class="catogory-table-data-option">
+                                    <form action="/admin/catogory/edit/{{this._id}}" method="get" style="display:inline;">
+                                     <button class="edit-btn" >Edit</button>
+                                   </form>
+                                    <form action="/admin/catogory/delete/{{this._id}}" method="post" style="display:inline;">
+                                     <button class="delete-btn" >Delete</button>
+                                   </form>
+                                </span>
+
+                        </div>
+                    {{/each}}
+                       
+
+                       </div>
+
+                    </div>
+                    
+
+                </div>
+                
+     </div>
+
+  {{!-- catogory page end --}}
+
+  </section>
+    
+
+
+</main>

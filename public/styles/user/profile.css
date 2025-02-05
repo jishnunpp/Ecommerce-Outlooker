@@ -1,0 +1,230 @@
+.profile-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.profile-page{
+
+    width: 1000px;
+    height: 600px;
+    margin: 2rem 0;
+    
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.profile-heading-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+ 
+}
+.logout-btn{
+    margin: 1rem 0;
+    width: 120px;
+    background-color: red;
+    color: white;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.profile{
+ width: 800px; 
+}
+.profile-heading{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+.profile-form{
+    padding: 1rem 0;
+}
+.input-feild{
+    margin: 1rem 0;
+    padding: 0 2rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.input-title{
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.profile-input{
+    width: 450px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+  
+}
+.profile-edit-btn{
+    display: flex;
+    justify-content: center;
+}
+.edit-btn{
+    margin: 1rem 0;
+    width: 120px;
+    background-color: #FF6000;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.profile-data-section{
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+.profile-order-btn button{
+    margin: 1rem 0;
+    width: 150px;
+    background-color:green;
+    color: white;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.profile-address-btn button{
+    margin: 1rem 0;
+    width: 150px;
+    background-color:rgb(49, 7, 49);
+    color: white;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width:1050px){
+
+    .profile-page{
+       
+        width: 800px;
+        height: 600px;
+        margin: 1rem 0;
+        
+        border-radius: 20px;
+         
+    }
+    .profile{
+
+        width: 700px;
+         
+    }
+    .input-feild{
+        margin: 1rem 0;
+        padding: 0 1rem;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .input-title{
+        
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .profile-input{
+        width: 350px;
+        height: 50px;
+        
+      
+    }
+  
+}
+
+@media screen and (max-width:800px){
+
+    .profile-page{
+       
+        width: 350px;
+        height: 600px;
+        margin: 1rem 0;
+        
+        border-radius: 20px;
+         
+    }
+    .profile{
+
+        width: 300px;
+        
+    }
+    .profile-heading-section{
+        padding: 1rem ;
+    }
+    .profile-heading{
+        font-size: 20px;
+        font-weight: 700;
+       
+    }
+    .profile-form{
+        padding: 0;
+    }
+    .logout-btn{
+        
+        width: 100px;
+        height: 40px;
+    }
+    .input-feild{
+        margin: 1rem 0;
+        padding: 0 1rem;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+    .input-title{
+        
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .profile-input{
+        width: 250px;
+        height: 45px;
+        
+      
+    }
+    .edit-btn{
+        width: 100px;
+        height: 40px;
+    }
+    .address-btn{
+        width: 100px;
+        height: 40px;
+    }
+    .profile-order-btn button{
+        margin: 1rem 0;
+        width: 120px;
+        background-color:green;
+        color: white;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+    }
+    .profile-address-btn button{
+        margin: 1rem 0;
+        width: 120px;
+        background-color:rgb(49, 7, 49);
+        color: white;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+    }
+  
+  
+}

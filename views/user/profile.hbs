@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="/styles/user/profile.css">
+
+<main >
+{{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+  {{!-- sign in page start --}}
+  <section class="profile-section section-padding">
+    <div class="profile-page">
+      <div class="profile-heading-section">
+        <div>
+              <h3 class="profile-heading">My Profile</h3>
+        </div>
+        <div>
+          <a href="/logout" style="all: unset;">  <button class="logout-btn" type="submit">Logout</button></a>
+          
+        </div>
+      </div>
+    <div class="profile">
+ 
+    <form  class="profile-form" action="/updateprofile" method="post" id="form">
+      <div class="input-feild">
+      <label  class="input-title" for="login">Username</label>
+      <div>
+        <input class="profile-input" type="text" placeholder="enter your name" name="name" id="name" value="{{user.name}}"><br>
+        <span style="color:red" id="name_error" class="error"></span>
+      </div>
+    </div>
+
+       <div class="input-feild">
+      <label  class="input-title" for="login">Phone</label>
+      <div>
+        <input class="profile-input" type="number" placeholder="enter your number" name="phone" id="phone" value="{{user.phone}}"><br>
+        <span style="color:red" id="phone_error" class="error"></span>
+      </div>
+   
+      </div>
+    
+      <div class="input-feild">
+      <label class="input-title" for="login">Email</label>
+       <div>
+        <input  class="profile-input" type="email" placeholder="username@gmail.com" name="email" id="email" value="{{user.email}}"><br>
+        <span style="color:red" id="email_error" class="error"></span>
+       </div>
+      
+      </div>
+    
+      <div class="profile-edit-btn">
+         <button class="edit-btn" type="submit">Edit profile</button><br>
+      </div>
+      
+      
+    </form>
+     <div class="profile-data-section">
+        
+         
+         <div class="profile-order-btn">
+            <a href='/orderhistory' style="all: unset;"> <button  type="submit">Order history</button></a>
+         
+         </div>
+         <div class="profile-address-btn">
+            <a href="/address" style="all: unset;"> <button  type="submit">Address</button></a>
+         
+         </div>
+         
+     </div>
+
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- profile page end --}}
+</main>
+
+
+<script>
+  document.getElementById("form").addEventListener("submit", function (event) {
+    let isValid = true;
+
+ 
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+   
+    document.getElementById("name_error").textContent = "";
+    document.getElementById("phone_error").textContent = "";
+    document.getElementById("email_error").textContent = "";
+
+   
+    if (name === "") {
+      document.getElementById("name_error").textContent = "Name is required.";
+      isValid = false;
+    } 
+
+    if (phone === "") {
+      document.getElementById("phone_error").textContent =
+        "Phone number is required.";
+      isValid = false;
+    } else if (!/^\d{10}$/.test(phone)) {
+      document.getElementById("phone_error").textContent =
+        "Phone number must be exactly 10 digits.";
+      isValid = false;
+    }
+
+ 
+    if (email === "") {
+      document.getElementById("email_error").textContent = "Email is required.";
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById("email_error").textContent =
+        "Invalid email format.";
+      isValid = false;
+    }
+
+
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+</script>
+
+
+  
+   <script>
+
+    const successMsg = "{{successMsg}}";
+    const failMsg = "{{failMsg}}";
+    
+
+    if (successMsg) {
+     
+      Swal.fire({
+        icon: 'success', 
+        title: 'Success!',
+        text: successMsg ,
+        timer: 3000, 
+        timerProgressBar: true,
+      });
+    }
+     if (failMsg) {
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops!',
+      text: failMsg,
+    });
+  }
+  </script>

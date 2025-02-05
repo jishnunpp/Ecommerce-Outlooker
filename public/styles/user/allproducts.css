@@ -1,0 +1,147 @@
+.allproducts{
+    display: flex;
+    width: 100%;
+}
+.filter-section{
+    width: 20%;
+    background-color: white;
+    margin: 2rem 0;
+    
+
+}
+.cards-section{
+    width: 80%;
+    padding: 1rem;
+  
+}
+.filter-section div{
+    margin: 1rem 0;
+}
+.filter-search-section{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+.filter-search-input{
+    margin: 0;
+    width: 150px;
+    height: 36px;
+    outline: none;
+    border: none;
+    padding: 5px 1rem;
+   
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color:#E7E7E7;
+}
+.filter-category-heading{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+.filter-section ul{
+
+    padding: 0;
+    text-align: center;
+ 
+}
+.filter-section li{
+    list-style: none;
+    margin: 8px 0;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.filter-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.filter-buttons button{
+    background-color:#E7E7E7;
+    margin: 8px 0;
+    border-radius: 30px;
+    width: 150px;
+    height: 45px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+.filter-buttons button:hover{
+    background-color: #EEC200;
+    color: #212B36;
+}
+.filter-box{
+    display: flex;
+    gap: 1rem;
+}
+.category-name{
+    width: 150px;
+    height: 45px;
+    border: none;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: white;
+}
+.filter-price{
+    width: 200px;
+    height: 45px;
+    border: none;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: white;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width:1000px){
+
+    .allproducts{
+        flex-direction: column;
+    }
+    .filter-section{
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .cards-section{
+        width: 100%;
+        padding: 0;
+    }
+    .filter-items{
+        display: flex;
+        justify-content: space-around;
+       
+    }
+    .filter-section div{
+        margin:3px 0;
+    }
+    .filter-search-input{
+        width: 60%;
+    }
+     
+}
+.filter-section li{
+    list-style: none;
+    margin: 3px 0;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-buttons button{
+    background-color:#E7E7E7;
+    margin: 3px 0;
+    border-radius: 30px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+}

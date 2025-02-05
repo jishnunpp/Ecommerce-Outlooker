@@ -1,0 +1,211 @@
+.users-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 ;
+}
+.users-table-section{
+   
+   
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+.users-table-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.users-table-content-heading{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+ 
+}
+.users-table-content-heading h2{
+    margin: 1rem 0;
+    color: #1F4173;
+    font-size: 25px;
+    font-weight: bold;
+   
+}
+.users-table{
+    width: 100%;
+    height: 400px;
+
+   
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+   
+}
+.users-table-heading-box{
+    background-color: #F4F7FC;
+    height: 110px;
+    padding: 0 1rem;
+}
+.users-search{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+
+}
+
+.users-input{
+    margin: 1rem 0;
+    height: 30px;
+
+}
+.users-input-btn{
+    margin: 0;
+    padding:0 5px;
+    height: 30px;
+}
+
+.users-table-item{
+    width: 20%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.users-table-item-password{
+    width: 25%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.users-table-options{
+    width: 15%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.users-table-data-box{
+   
+    color: #2E3B52;
+    background-color: white;
+    padding: 8px 1rem;
+}
+.table-row{
+    margin: 10px;
+}
+
+
+.users-table-data-name{
+    
+    font-size: 13px;
+    font-weight: bold;
+   
+
+}
+.users-table-data{
+    width: 20%;
+    font-size: 13px;
+
+}
+.users-table-data-password{
+   font-size: 13px;
+ /* Allows text to wrap onto the next line */
+    
+}
+.users-table-data-option{
+    width: 15%;
+    font-size: 13px;
+    font-weight: bold;
+}
+.unblock-btn{
+    background-color: rgb(121, 30, 121);
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+}
+.block-btn{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+}
+@media screen and (max-width:1300px){
+    .users-table-section{
+        width: 1000px;
+      
+    } 
+    .users-table-content{
+        width: 100%;
+    
+    }
+    .users-table{
+        width: 100%;
+      
+        overflow: auto;
+    }
+    
+}
+@media screen and (max-width:800px){
+    .users-section{
+        padding:1rem;
+    }
+    thead{
+        display: none;
+    }
+    tr{
+        border: 1px solid gray;
+    }
+   td{
+    display: grid;
+    grid-template-columns: 8ch auto;
+    border: none;
+    gap: 8px;
+  
+   }
+   td::before{
+    content: attr(data-cell)"" ":" "";
+    font-weight: 700;
+   }
+   
+    .users-table-data-name{
+        font-size: 15px;
+    }
+    .users-table-data{
+        font-size: 15px;
+    
+    }
+    .users-table-data-password{
+        font-size: 15px;
+    }
+    .users-table-data-option{
+       display: flex;
+        font-size: 15px;
+       
+    }
+    
+}
+
+@media screen and (max-width:500px){
+  
+   
+    .users-table-data-name{
+        font-size: 12px;
+    }
+    .users-table-data{
+        font-size: 12px;
+    
+    }
+    .users-table-data-password{
+        font-size: 9px;
+    }
+    .users-table-data-option{
+      
+        font-size: 12px;
+       
+    }
+    
+}

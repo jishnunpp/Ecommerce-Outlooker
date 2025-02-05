@@ -1,0 +1,175 @@
+.catogory-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem ;
+}
+.catogory-table-section{
+   
+    height: 500px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.catogory-table-content{
+    width: 1100px;
+ 
+   
+}
+
+.catogory-head-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+ 
+  
+}
+.catogory-heading h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: #212B36;
+}
+.catogory-btn button{
+    background-color: #EEC200;
+    height: 40px;
+    width: 150px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+}
+.catogory-table{
+    width: 1100px;
+    height: 400px;
+   
+   
+}
+.catogory-table-heading-box{
+    background-color: #F4F7FC;
+    height: 110px;
+    padding: 0 1rem;
+}
+.catogory-search{
+    display: flex;
+    justify-content: end;
+
+}
+
+.catogory-input{
+    margin: 1rem 0;
+
+}
+.catogory-input-btn{
+    margin: 0;
+ 
+}
+.catogory-table-headings{
+    display: flex;
+    padding: 5px;
+    margin: 5px 0;
+}
+.catogory-table-item-number{
+    width: 20%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.catogory-table-item-name{
+    width: 60%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.catogory-table-item-options{
+    width: 20%;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+.catogory-table-data-box{
+    padding: 8px 5px;
+    display: flex;
+    color: #2E3B52;
+    background-color: white;
+    padding: 8px 1rem;
+}
+.catogory-table-data-number{
+    width: 20%;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.catogory-table-data-name{
+    width: 60%;
+    font-size: 15px;
+
+}
+
+.catogory-table-data-option{
+    width: 20%;
+    font-size: 13px;
+    font-weight: bold;
+}
+.edit-btn{
+    background-color: rgb(121, 30, 121);
+    width: 50px;
+    color: white;
+    border-radius: 5px;
+   
+}
+.delete-btn{
+    background-color: red;
+    width: 50px;
+    color: white;
+    border-radius: 5px;
+   
+}
+
+@media screen and (max-width:1300px){
+    .catogorys-table-section{
+        width: 90%;
+    } 
+    .catogory-table-content{
+        width: 95%;
+    }
+    .catogory-table{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width:600px){
+    .catogory-section{
+        padding:0;
+    }
+    .catogory-table-section{
+        width: 100%;
+        
+    } 
+    .catogory-table-content{
+        width: 95%;
+    }
+    .catogory-table{
+        width: 100%;
+    }
+    .catogory-heading h2{
+        font-size: 20px;
+        font-weight: bold;
+        color: #212B36;
+    }
+    .catogory-btn button{
+      
+        height: 35px;
+        width: 120px;
+        font-size: 12px;
+       
+    }
+    .catogory-table-data-box{
+   
+        padding: 8px 5px;
+    }
+   
+    
+}
+

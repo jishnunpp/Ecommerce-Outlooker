@@ -1,0 +1,148 @@
+  <link rel="stylesheet" href="/styles/user/home.css">
+  {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+ <section class="dress-section section-padding">
+  {{!-- <div class="dress-heading-section">
+  <p>your saved products</p>
+  </div> --}}
+ 
+ <div style="display: flex;margin:2rem 0;">
+   <h1 style="margin-top: 4rem; font-weight:700;">{{message}}</h1>
+    {{#each products}}
+      
+    <div class="dress-item">
+    
+      <div class="dress-item-image">
+          <a href="/productdetails/{{this._id}}" class="image-link"></a>
+         {{#each this.images}}
+    {{#if @first}}
+      
+        <img src="/{{this}}" alt="{{../title}}" />
+     
+    {{/if}}
+  {{/each}}
+ </a>
+      </div>
+       
+      <div class="dress-item-details">
+        <div class="dress-item-name">
+          <p>{{this.title}}</p>
+        </div>
+        <div class="dress-item-price">
+          <p class="dress-item-price-amount">₹{{this.price}}</p>
+          <p class="dress-item-price-offer">{{this.offer}}%off</p>
+        </div>
+        <div class="dress-item-buttons">
+   <button class="add-cart-btn"  onclick="addToCart('{{this._id}}')" >Add To Cart <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/></svg></button>
+          
+         <button class="add-wishlist-btn" 
+        onclick="removeWishlist('{{this._id}}')" 
+        aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/></svg></button>
+        </div>
+
+      </div>
+     
+    </div>
+  
+     {{/each}}
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<script>
+  function removeWishlist(productId) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to undo this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3885d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, remove it"
+    }).then((result) => {
+      if (result.isConfirmed) {
+      
+        jQuery.ajax({
+          url: '/removewishlist',
+          method: 'POST',
+          data: { productId: productId },
+          success: (response) => {
+            if (response) {
+              Swal.fire({
+                title: 'Removed!',
+                text: 'The product has been removed from your wishlist.',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false,
+              }).then(() => {
+             
+                location.reload();
+              });
+            } else {
+              Swal.fire({
+                title: 'Error',
+                text: response.message,
+                icon: 'error',
+              });
+            }
+          },
+          error: (error) => {
+            Swal.fire({
+              title: 'Error',
+              text: 'There was an error. Please try again later.',
+              icon: 'error',
+            });
+          }
+        });
+      }
+    });
+  }
+</script>
+
+
+<script>
+  function addToCart(productId) {
+ 
+    const button = document.querySelector(`button[onclick="addToCart('${productId}')"]`);
+    button.disabled = true;
+
+    jQuery.ajax({
+      url: '/addtocart',
+      method: 'POST',
+      data: { productId: productId },
+      success: (response) => {
+        if (response.status) {
+          Swal.fire({
+            title:'Added to cart',
+            text:'the product has been added to your cart',
+            icon:'success',
+            timer:2000
+          })
+        } else {
+          Swal.fire({
+            title:'Already in cart',
+            text:response.message,
+            icon:'info',
+            timer:2000
+          })
+        }
+      },
+      error: (error) => {
+        alert('There was an error. Please try again later.');
+      },
+      complete: () => {
+        
+        button.disabled = false;
+      }
+    });
+  }
+</script>

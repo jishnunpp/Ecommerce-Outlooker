@@ -1,0 +1,100 @@
+.addcatogory-section{
+    display: flex;
+    justify-content: center;
+}
+.addcatogory-page{
+   
+    width: 400px;
+    height: 400px;
+    margin: 4rem 0;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.addcatogory{
+
+    width: 300px;
+    height: 400px;
+  
+   
+}
+.addcatogory-title{
+    margin: 2rem 0;
+}
+.addcatogory-title h2{
+    font-size: 25px;
+    font-weight:700;
+    color: #2A1E17;
+}
+.addcatogory-form{
+    padding: 1rem 0;
+}
+.input-feild{
+    margin: 1rem 0;
+}
+.input-title{
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+.addcatogory-input{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+  
+}
+.addcatogory-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addcatogory-btn button{
+    margin: 2rem 0;
+    width: 50%;
+    background-color: #FF6000;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.addcatogory-text{
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:500px){
+
+
+    .addcatogory-page{
+        
+        width: 320px;
+        height: 380px;
+       
+        margin: 2rem 0;
+       }
+       .addcatogory{
+
+        width: 280px;
+        height: 300px;
+      
+       
+    }
+    .addcatogory-title{
+        margin: 10px 0;
+    }
+    .addcatogory-title h2{
+        font-size: 20px;
+        font-weight:700;
+        color: #2A1E17;
+    }
+    
+}

@@ -1,0 +1,313 @@
+.delivery-details{
+    
+    border-radius: 20px;
+    padding: 1rem 0;
+    margin: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.delivery-form-section{
+    width: 60%;
+    padding: 0 2rem;
+}
+.delivery-payment-section{
+    width: 350px;
+    background-color: white;
+    margin:0 3rem;
+    padding:  2rem;
+    height: 100%;
+    border-radius: 20px;
+}
+.delivery-address{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+.delivery-address p{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #212B36;
+  margin: 0;
+ 
+}
+.address-box{
+    border: 1px solid orange;
+    background-color: white;
+    width: 250px;
+    height: 100%;
+    border-radius: 10px;
+    padding:5px 5px;
+}
+.address-box p{
+    font-size: 12px;
+    text-transform: lowercase;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+   
+}
+.address-box-btn{
+    display: flex;
+    justify-content: center;
+}
+.address-box-btn button{
+    background-color: #EEC200;
+    color: #212B36;
+    height: 30px;
+    width: 70px;
+    font-size:14px;
+    font-weight: 600;
+    margin-top:5px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+.address-box-btn button:hover{
+    background-color:#FF6000;
+    color: white;
+}
+.delivery-address-btn button{
+    background-color: #EEC200;
+    color: #212B36;
+    height: 40px;
+    width: 140px;
+    font-size:14px;
+    font-weight: 600;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+.delivery-address-btn button:hover{
+    background-color:#FF6000;
+    color: white;
+}
+.address-form{
+    display: flex;
+}
+
+/* address form */
+.address-heading{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+.address-form{
+    padding: 1rem 0;
+}
+.address-input-name{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+}
+.address-inputs{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.input-feild{
+    margin: 5px 0;
+ 
+    
+}
+.input-title{
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.address-input{
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+  
+}
+.address-edit-btn{
+    display: flex;
+    justify-content: center;
+}
+
+
+.delivery-section-logo img{
+    width: 150px;
+    height: 80px;
+}
+.payment-form{
+    padding: 1rem 0;
+}
+.payment-form h4{
+    font-weight: 700;
+    font-size: 22px;
+    color: #1C1B4E;
+    line-height: 30.26px;
+    font-style: italic;
+}
+.form {
+    color: #1C1B4E;  
+}
+.form label{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.coupon-code{
+    width: 100%;
+    background-color: gainsboro;
+    height: 50px;
+    margin: 1rem 0;
+    border: none;
+    padding: 5px 1rem;
+}
+.amount-section{
+    display: flex;
+    
+    align-items: center;
+    margin: 1rem 0;
+}
+.amount-section p{
+    margin: 0;
+}
+.amount-section input{
+    border: none;
+   font-weight: bold;
+}
+
+.form p{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 2rem;
+    color: #1C1B4E;
+}
+.payment-form-btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.payment-form-btn button{
+    background-color: #EEC200;
+    color: #212B36;
+    height: 45px;
+    width: 100px;
+    font-size:16px;
+    font-weight: 800;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+}
+.payment-form-btn button:hover{
+    background-color:#FF6000;
+    color: white;
+}
+@media screen and (max-width:1000px){
+
+   
+    .delivery-form-section{
+        width: 50%;
+        padding: 0 ;
+    }
+    .delivery-payment-section{
+        width: 40%;
+        background-color: white;
+        margin:0 3rem ;
+        padding:  2rem;
+    }
+    .delivery-address{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .delivery-address p{
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: black;
+      margin: 0;
+    }
+    .address-box{
+        border: 1px solid orange;
+        width: 180px;
+        
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .address-box p{
+        font-size: 10px;
+        text-transform: lowercase;
+        font-weight: 400;
+       
+    }
+    .address-box-btn{
+        display: flex;
+        justify-content: center;
+    }
+    .address-box-btn button{
+        background-color: #EEC200;
+        color: #212B36;
+        height: 20px;
+        width: 70px;
+        font-size:12px;
+        font-weight: 600;
+       
+    }
+    .delivery-address-btn button{
+    
+        height: 40px;
+        width: 120px;
+        font-size:12px;
+        font-weight: 600;
+    
+    }
+   .address-inputs{
+    flex-direction: column;
+   }
+    .input-feild{
+        margin: 0;
+        padding: 0 1rem;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+    .input-title{
+        
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .address-input{
+        width: 100%;
+        height: 45px;
+        
+      
+    }
+   
+    .address-btn{
+        width: 150px;
+        height: 40px;
+        margin:5px  1rem 0 1rem;
+    }
+  
+}
+
+@media screen and (max-width:700px){
+    .address-form{
+        display: flex;
+        flex-direction: column;
+    }
+    .delivery-form-section{
+        width: 100%;
+        padding: 0 ;
+    }
+    .delivery-payment-section{
+        width: 100%;
+        background-color: white;
+        margin: 2rem 0;
+        padding:  1rem;
+    }
+}

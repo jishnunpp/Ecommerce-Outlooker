@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/styles/admin/addcatogory.css">
+<main>
+    <section>
+  {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+    </section>
+
+
+      {{!-- catogory page start --}}
+  <section class="addcatogory-section section-padding">
+   <div class="addcatogory-page">
+    <div class="addcatogory">
+    <div class="addcatogory-title">
+        <h2>Add New Catogory</h2>
+    </div>
+    
+    <form action="/admin/addcatogory" method="post" class="catogory-form" onsubmit="return validateCatogory()">
+      <div class="input-feild">
+       <label  class="input-title" for="login" >Catogory Name</label><br>
+       <input class="addcatogory-input" type="text" placeholder="Enter new catogory" id="catogoryname" name="catogoryname"><br>
+       <span style="color:red" id="catogory_error" class="error"></span>
+      </div>
+      
+      <div class="addcatogory-btn">
+             <button  type="submit">Add</button>
+      </div>
+      
+     
+    </form>
+   
+  
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- catogory  page end --}}
+
+</main>
+
+
+ <script>
+ 
+    
+
+    function validateCatogory() {
+
+      let isValid = true;
+
+
+      const catogory = document.getElementById("catogoryname").value.trim();
+      const catogoryError = document.getElementById("catogory_error");
+
+     catogoryError.textContent = "";
+ 
+
+   if (catogory === "") {
+  catogory_error.textContent = "Category is required.";
+  isValid = false;
+}
+
+
+      
+     
+      return isValid;
+    }
+  </script>

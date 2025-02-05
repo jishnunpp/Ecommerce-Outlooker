@@ -1,0 +1,214 @@
+<link rel="stylesheet" href="/styles/admin/addbanner.css">
+<main>
+    <section>
+   {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+  </section>
+  {{!-- sign in page start --}}
+  <section class="addbanner-section section-padding">
+    <div class="addbanner-page">
+      
+       
+        
+      
+    <div class="addbanner">
+       <div class="addbanner-heading-section">
+              <h3 class="addbanner-heading">Edit Banner</h3>
+        </div>
+    
+    <form  class="addbanner-form" action="/admin/banner/edit/{{banner._id}}" method="post" id="form" enctype="multipart/form-data">
+     
+       <div class="addbanner-inputs">
+         <div class="input-feild">
+         <label  class="input-title" for="login">Banner Name</label><br>
+         <input class="addbanner-input" type="text" placeholder=" banner name" name="bannername" id="name" value="{{banner.bannername}}"><br>
+         <span style="color:red" id="images_error" class="error"></span>
+         </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Description</label><br>
+          <input  class="addbanner-input" type="text" placeholder="banner description" name="description" id="description" value="{{banner.description}}">
+          <br>
+         <span style="color:red" id="description_error" class="error"></span>
+         </div>
+       </div>
+
+        <div class="addbanner-inputs">
+          <div class="input-feild">
+          <label  class="input-title" for="login">Offer Details</label><br>
+          <input class="addbanner-input" type="text" placeholder="offer details" name="offer" id="offer" value="{{banner.offer}}">
+          <br>
+         <span style="color:red" id="offer_error" class="error"></span>
+          </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Button Link</label><br>
+          <input  class="addbanner-input" type="text" placeholder="paste your link" name="link" id="link" value="{{banner.link}}">
+          <br>
+         <span style="color:red" id="link_error" class="error"></span>
+         </div>
+       </div>
+
+         <div class="input-feild-button">
+        
+         
+          <div class="input-feild">
+     <label class="input-title" for="login">Banner Image</label><br>
+      <label for="image1" class="custom-file-label">Change File</label>
+     <span class="file-name" id="fileName1" >No file chosen</span>
+     <input type="file" id="image1" value="/{{banner.image}}" name="image"  accept="image/*"><br>
+      <span style="color:red" id="image1_error" class="error"></span>
+     <div id="mainImageWrapper" style="margin-top: 10px; ">
+        <img id="mainImagePreview" src="/{{banner.image}}" alt="Main Image Preview" >
+        {{!-- <button id="removeMainImage"  >Remove</button> --}}
+        
+     </div>
+    
+          </div>
+
+
+      </div>
+       
+      
+     
+     
+      <div class="addbanner-btn">
+         <button type="submit">Submit</button><br>
+      </div>
+      
+      
+    </form>
+     
+
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- profile page end --}}
+<style>
+    
+#mainImageWrapper {
+   
+    width: 100px;
+    height: 120px;
+   } 
+
+#mainImageWrapper img {
+    width: 100%;
+    height: 100px;
+ 
+    border-radius: 3px; 
+
+}
+
+#mainImageWrapper button {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background-color:red;
+    color: #fff;
+    
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+   
+}
+</style>
+
+  
+</main>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const fileInput = document.getElementById("image1");
+  const fileNameSpan = document.getElementById("fileName1");
+  const imagePreview = document.getElementById("mainImagePreview");
+  const removeButton = document.getElementById("removeMainImage");
+  const form = document.getElementById("form");
+
+
+  const initialImagePath = fileInput.getAttribute("value");
+  if (initialImagePath) {
+    fileNameSpan.textContent = initialImagePath.split("/").pop();
+    imagePreview.src = initialImagePath;
+  } else {
+    removeButton.style.display = "none";
+  }
+
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) {
+      fileNameSpan.textContent = file.name;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = "block";
+        removeButton.style.display = "inline-block";
+      };
+      reader.readAsDataURL(file);
+    } else {
+      resetFileInput();
+    }
+  });
+
+  {{!-- removeButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    resetFileInput();
+  }); --}}
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let isValid = true;
+
+    document.querySelectorAll(".error").forEach((error) => (error.textContent = ""));
+
+    const name = document.getElementById("name").value.trim();
+    if (!name) {
+      document.getElementById("images_error").textContent = "Banner name is required.";
+      isValid = false;
+    }
+
+    const description = document.getElementById("description").value.trim();
+    if (!description) {
+      document.getElementById("description_error").textContent = "Description is required.";
+      isValid = false;
+    }
+
+    const offer = document.getElementById("offer").value.trim();
+    if (!offer) {
+      document.getElementById("offer_error").textContent = "Offer details are required.";
+      isValid = false;
+    }
+
+    const link = document.getElementById("link").value.trim();
+    if (!link) {
+      document.getElementById("link_error").textContent = "Button link is required.";
+      isValid = false;
+    }
+
+    const image = fileInput.files[0];
+    if (!image && !initialImagePath) {
+      document.getElementById("image1_error").textContent = "Banner image is required.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      form.submit();
+    }
+  });
+
+
+  function resetFileInput() {
+    fileInput.value = "";
+    fileNameSpan.textContent = "No file chosen";
+    imagePreview.src = "";
+    imagePreview.style.display = "none";
+    removeButton.style.display = "none";
+  }
+});
+
+</script>

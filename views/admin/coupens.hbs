@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/styles/admin/banner.css">
+<main>
+  <section>
+   {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+    
+  </section>
+
+
+  <section>
+      {{!-- coupen page start --}}
+    <div class="catogory-section">
+                <div class="catogory-table-section">
+                    <div class="catogory-table-content">
+                         <div class="catogory-head-box">
+                            <div class="catogory-heading">
+                             <h2>Coupen Management</h2>
+                           </div>
+                           <div class="catogory-btn">
+                            <a  href="/admin/addcoupen" all="unset"> <button>Add new Coupen</button></a>
+                           
+                           </div>
+
+                         </div>
+                       
+                       <div class="catogory-table">
+                        <div class="catogory-table-heading-box">
+                            <div class="catogory-search">
+                              
+                               
+                            </div>
+                            <div class="catogory-table-headings">
+                                <span class="catogory-table-item-name">Coupen Name</span>
+                                <span class="catogory-table-item-name">Start Date</span>
+                                <span class="catogory-table-item-name">End Date</span>
+                                <span class="catogory-table-item-link">Offer Price</span>
+                                <span class="catogory-table-item-link">Minimum Price</span>
+                                <span class="catogory-table-item-options">Options</span>
+
+                            </div>
+
+                        </div>
+                        {{#each coupen}}
+                        <div class="catogory-table-data-box">
+                                <span class="catogory-table-data-name">{{coupename}}</span>
+                                <span class="catogory-table-data-name">{{startdate}}</span>
+                                <span class="catogory-table-data-name"> {{enddate}}</span>
+                                <span class="catogory-table-data-link">{{offerprice}}</span>
+                                <span class="catogory-table-data-link">{{minprice}}</span>
+                             
+                                <span class="catogory-table-data-option">
+                                 
+                                   <div> <form action="/admin/coupen/delete/{{this._id}}" method="post" style="display:inline;">
+                                     <button class="delete-btn" id="delete-btn" >Delete</button></form>
+                                   </div>
+                                </span>
+
+                        </div>
+                        {{/each }}
+                        
+                       
+
+                       </div>
+
+                    </div>
+                    
+
+                </div>
+                
+     </div>
+
+  {{!-- coupen page end --}}
+
+  </section>
+    
+
+
+</main>
+
+
+
+

@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/styles/user/orders.css">
+<main>
+  <section class="orders-section section-padding">
+    <h2>completed orders</h2>
+    <div class="orders">
+      <div class="orders-box">
+        <div class="orders-headings">
+          <span class="orders-heading-name">Date</span>
+          <span class="orders-heading-name">User</span>
+          <span class="orders-heading-address">Address</span>
+          <span class="orders-heading-price">Price</span>
+          <span class="orders-heading-price">Price</span>
+          <span class="orders-heading-price">Status</span>
+          <span class="orders-heading-view">View Orders</span>
+          
+        </div>
+        {{#each orders }}
+        <div class="orders-items">
+          
+          <span class="orders-item-name">{{order.createdAt}}</span>
+          <span class="orders-item-name">{{order.name}}</span>
+          <span class="orders-item-address">{{order.housename}},{{order.streetaddress}},{{order.towncity}}</span>
+          <span class="orders-item-price">{{order.amount}}</span>
+          <span class="orders-item-price" ><button style="background-color: green; color:white">{{order.status}}</button></span>
+          
+           <a href="/admin/view-order/{{this.orderId}}"><span class="orders-item-view"><button>View Product</button></span></a>
+         
+        </div>
+           {{/each}}
+      </div>
+    </div>
+  </section>
+</main>
+
+
+

@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="/styles/user/signup.css">
+
+<main style="background-color: C7D2D6;">
+  {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+
+  {{!-- sign in page start --}}
+  <section class="signup-section section-padding">
+   <div class="signup-page">
+    <div class="signup">
+      <h1 class="signup-heading">
+       Register
+    </h1>
+     <p style="color: red;">{{message}}</p>
+    <form  class="signup-form" action="/register" method="post" id="form" onsubmit="return validate()">
+        <input type="text" id="message" name="message" value="{{message}}" hidden>
+      <div class="input-feild">
+      <label  class="input-title" for="login">Username</label><br>
+      <input class="signup-input" type="text" placeholder="enter your name" name="name" id="name" ><br>
+         <span style="color:red" id="name_error" class="error"></span>
+      </div>
+      <div class="input-feild">
+      <label class="input-title" for="login">Email</label><br>
+      <input  class="signup-input" type="text" placeholder="username@gmail.com" name="email" id="email" ><br>
+        <span style="color:red" id="email_error" class="error"></span>
+      </div>
+      <div class="input-feild">
+      <label  class="input-title" for="login">Phone</label><br>
+      <input class="signup-input" type="text" placeholder="enter your phone number" name="phone" id="phone" ><br>
+         <span style="color:red" id="phone_error" class="error"></span>
+      </div>
+      <div class="input-feild">
+      <label class="input-title" for="login">Password</label><br>
+      <input  class="signup-input" type="password" placeholder="password" name="password"i id="password" ><br>
+         <span style="color:red" id="password_error" class="error"></span>
+
+      </div>
+    
+  
+      <button class="signup-btn" type="submit">Register</button><br>
+   
+    
+    </form>
+  <a href="/login" style="all: unset;"><p class="signup-text">Allready have account ?</p></a>
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- signup page end --}}
+</main>
+
+
+  <script>
+ 
+    
+
+    function validate() {
+
+      
+
+      let isValid = true;
+
+      // Get form values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Error spans
+      const nameError = document.getElementById("name_error");
+      const emailError = document.getElementById("email_error");
+      const phoneError = document.getElementById("phone_error");
+      const passwordError = document.getElementById("password_error");
+
+      // Clear previous error messages
+      nameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+      passwordError.textContent = "";
+
+      // Username validation
+      if (name === "") {
+        nameError.textContent = "Username is required.";
+        isValid = false;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email === "") {
+        emailError.textContent = "Email is required.";
+        isValid = false;
+      } else if (!emailRegex.test(email)) {
+        emailError.textContent = "Enter a valid email address.";
+        isValid = false;
+      }
+
+      // Phone validation
+      const phoneRegex = /^[0-9]{10}$/;
+      if (phone === "") {
+        phoneError.textContent = "Phone number is required.";
+        isValid = false;
+      } else if (!phoneRegex.test(phone)) {
+        phoneError.textContent = "Enter a valid 10-digit phone number.";
+        isValid = false;
+      }
+
+      // Password validation
+      if (password === "") {
+       
+        passwordError.textContent = "Password is required.";
+        isValid = false;
+      } else if (password.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+     
+      return isValid;
+    }
+  </script>

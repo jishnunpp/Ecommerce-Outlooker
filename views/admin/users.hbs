@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/styles/admin/users.css">
+<main>
+     {{!-- header section start --}}
+  {{> adminheader}}
+  {{!-- header section end --}}
+
+  {{!-- users page start --}}
+    <div class="users-section">
+                <div class="users-table-section">
+                    <div class="users-table-content">
+                         <div class="users-table-content-heading">
+                              <h2>All Users</h2>
+                         </div>
+                            <div class="users-search">
+                                <form action="/admin/search/users" method="get" class="form">
+                                     <input type="text" placeholder="search here" class="users-input" name="q" required>
+                                     <button type="submit" class="users-input-btn">search</button>
+
+                                </form>
+                                
+                               
+                            </div>
+
+                        <table class="users-table">
+    <thead class="users-table-heading-box">
+        <tr >
+            <th class="users-table-item">Name</th>
+            <th class="users-table-item">Email</th>
+            <th class="users-table-item">Phone</th>
+           
+            <th class="users-table-options">Actions</th>
+        </tr>
+    </thead>
+    <tbody class="users-table-data-box">
+        {{#each users}}
+        <tr class="table-row">
+            <td data-cell="name" class="users-table-data-name">{{this.name}}</td>
+            <td data-cell="email" class="users-table-data">{{this.email}}</td>
+            <td data-cell="phone" class="users-table-data">{{this.phone}}</td>
+           
+            <td data-cell="options" class="users-table-data-option">
+                {{#if this.isBlocked}}
+                    <form action="/admin/unblock/{{this._id}}" method="post" style="display:inline;">
+                        <button class="unblock-btn">Unblock</button>
+                    </form>
+                {{else}}
+                    <form action="/admin/block/{{this._id}}" method="post" style="display:inline;">
+                        <button class="block-btn">Block</button>
+                    </form>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+                       
+                   
+                    </div>
+                    
+                    
+
+                </div>
+                
+                
+     </div>
+     
+       
+  
+   
+
+
+            
+  {{!-- users page end --}}
+</main>
+
+

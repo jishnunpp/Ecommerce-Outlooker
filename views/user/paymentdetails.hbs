@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="/styles/user/paymentdetails.css">
+<main>
+  {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+
+<section>
+    <div class="payment-details">
+        <div class="payment-details-page">
+            <div class="payment-details-page-heading">
+                <p>Your payment details</p>
+            </div>
+            <div class="data-section">
+                <div class="box">
+                    
+                  <label for="name">Name</label><br>
+                  <input type="text" name="name" placeholder="Name">
+                </div>
+             
+            </div>
+             <div class="data-section">
+                <div class="number-box">
+                    <div>
+                      <label for="name">Card Number</label><br>
+                      <input type="number" name="cardnumber" placeholder="3376 3458 3498 5738">
+                    </div>
+                    <div>
+                        <img src="/images/logos_visa.png" alt="">
+                    </div>
+                  
+                </div>
+            </div>
+             <div class="data-section">
+                <div class="box year">
+                  <label for="name">Expiration Date</label><br>
+                  <select placeholder="month" >
+                
+                   <option name="January" value="Jan">January</option>
+                   <option name="February" value="Feb">February</option>
+                   <option name="March" value="Mar">March</option>
+                   <option name="April" value="Apr">April</option>
+	               <option name="May" value="May">May</option>
+                   <option name="June" value="Jun">June</option>
+                   <option name="July" value="Jul">July</option>
+                   <option name="August" value="Aug">August</option>
+	               <option name="September" value="Sep">September</option>
+                   <option name="October" value="Oct">October</option>
+                   <option name="November" value="Nov">November</option>
+                   <option name="December" value="Dec">December</option>
+                 </select>
+
+
+                </div>
+                <div class="box year">
+                    <label for="name">Year</label><br>
+                 <select id="year" placeholder="year">
+                 
+                  <option value="2015" name="2015">2015</option>
+                  <option value="2016" name="2016">2016</option>
+                  <option value="2017" name="2017">2017</option>
+                  <option value="2018" name="2018">2018</option>
+                  <option value="2019" name="2019">2019</option>
+                  <option value="2020" name="2020">2020</option>
+                  <option value="2021" name="2021">2021</option>
+                  <option value="2022" name="2022">2022</option>
+                  <option value="2023" name="2023">2023</option>
+                  <option value="2024" name="2024">2024</option>
+                  <option value="2025" name="2025">2025</option>
+                  <option value="2026" name="2026">2026</option>
+                  <option value="2027" name="2027">2027</option>
+                  <option value="2028" name="2028">2028</option>
+                  <option value="2029" name="2029">2029</option>
+                  <option value="2030" name="2030">2030</option>
+                </select>
+
+                </div>
+                <div class="box year">
+                 <label for="name">cvc</label><br>
+                  <input type="number" name="cvc" placeholder="XXX">
+                </div>
+            </div>
+            <div class="payment-btn">
+                <button>pay now</button>
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+
+
+</main>

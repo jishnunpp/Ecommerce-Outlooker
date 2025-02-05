@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="/styles/user/address.css">
+
+<main >
+ {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+
+  {{!-- sign in page start --}}
+  <section class="address-section section-padding">
+    <div class="address-page">
+      
+       
+        
+      
+    <div class="address">
+       <div class="address-heading-section">
+              <h3 class="address-heading">Address</h3>
+        </div>
+   
+    <form  class="address-form" action="/updateaddress" method="post" id="form">
+      <div class="input-feild">
+      <label  class="input-title" for="login">Name</label><br>
+      <input class="address-input-name" type="text" placeholder=" Name" name="name" id="name" value="{{this.name}}">
+      <br>
+           <span style="color:red" id="name_error" class="error"></span>
+      </div>
+
+       <div class="address-inputs">
+         <div class="input-feild">
+         <label  class="input-title" for="login">House Name</label><br>
+         <input class="address-input" type="text" placeholder="HouseName" name="housename" id="housename" value="{{this.housename}}"><br>
+           <span style="color:red" id="housename_error" class="error"></span>
+         </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Street Address</label><br>
+          <input  class="address-input" type="text" placeholder="Street Address" name="streetaddress" id="streetaddress" value="{{this.streetaddress}}">
+          <br>
+           <span style="color:red" id="streetaddress_error" class="error"></span>
+         </div>
+       </div>
+
+        <div class="address-inputs">
+          <div class="input-feild">
+          <label  class="input-title" for="login">Town/City</label><br>
+          <input class="address-input" type="text" placeholder="Town/City" name="towncity" id="towncity" value="{{this.towncity}}">
+          <br>
+           <span style="color:red" id="towncity_error" class="error"></span>
+          </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Pincode</label><br>
+          <input  class="address-input" type="number" placeholder="Pincode" name="pincode" id="pincode" value="{{this.pincode}}">
+          <br>
+           <span style="color:red" id="pincode_error" class="error"></span>
+         </div>
+       </div>
+
+         <div class="address-inputs">
+        
+          <div class="input-feild">
+          <label class="input-title" for="login">Phone</label><br>
+          <input  class="address-input" type="number" placeholder="Phone" name="phone" id="phone" value="{{this.phone}}">
+          <br>
+           <span style="color:red" id="phone_error" class="error"></span>
+         </div>
+       </div>
+      
+     
+     
+      <div class="address-edit-btn">
+         <button class="address-btn" type="submit">Add New Address</button><br>
+      </div>
+      
+      
+    </form>
+    
+
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- profile page end --}}
+</main>
+
+
+
+
+<script>
+  document.getElementById("form").addEventListener("submit", function (event) {
+    let isValid = true;
+
+   
+    document.querySelectorAll(".error").forEach((error) => (error.textContent = ""));
+
+   
+    const name = document.getElementById("name").value.trim();
+    if (name === "" ) {
+      document.getElementById("name_error").textContent = "Name  is required.";
+      isValid = false;
+    }
+
+   
+    const housename = document.getElementById("housename").value.trim();
+    if (housename === "") {
+      document.getElementById("housename_error").textContent = "House Name is required.";
+      isValid = false;
+    }
+
+ 
+    const streetaddress = document.getElementById("streetaddress").value.trim();
+    if (streetaddress === "" ) {
+      document.getElementById("streetaddress_error").textContent = "Street Address  is required.";
+      isValid = false;
+    }
+
+   
+    const towncity = document.getElementById("towncity").value.trim();
+    if (towncity === "") {
+      document.getElementById("towncity_error").textContent = "Town/City is required.";
+      isValid = false;
+    }
+
+  
+    const pincode = document.getElementById("pincode").value.trim();
+    if (!/^\d{6}$/.test(pincode)) {
+      document.getElementById("pincode_error").textContent = "Pincode must be a 6-digit number.";
+      isValid = false;
+    }
+
+
+    const phone = document.getElementById("phone").value.trim();
+    if (!/^\d{10}$/.test(phone)) {
+      document.getElementById("phone_error").textContent = "Phone number must be a 10-digit number.";
+      isValid = false;
+    }
+
+ 
+    if (!isValid) {
+      event.preventDefault();
+    }
+  });
+</script>
+

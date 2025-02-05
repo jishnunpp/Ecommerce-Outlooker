@@ -1,0 +1,180 @@
+.otp-section{
+    display: flex;
+    justify-content: center;
+}
+.otp-page{
+   
+    width: 400px;
+    height: 450px;
+    margin: 4rem 0;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.otp{
+
+    width: 300px;
+    height: 400px;
+  
+   
+}
+
+.otp-form{
+    padding: 1rem 0;
+}
+.input-feild{
+    margin: 1rem 0;
+}
+.input-title{
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+.otp-input{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 1rem;
+  
+}
+.otp-btn{
+    margin: 2rem 0;
+    width: 100%;
+    background-color: #FF6000;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.otp-text{
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:500px){
+
+
+    .otp-page{
+        
+        width: 320px;
+       
+        margin: 2rem 0;
+       }
+       .otp{
+
+        width: 280px;
+        height: 330px;
+      
+       
+    }
+    
+}
+.feild-otp-page{
+    width: 400px;
+    height: 450px;
+    margin: 4rem 0;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.feild-otp-text h1{
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    font-weight: 600;
+    line-height: 35px;
+    color: #474646;
+}
+.feild-otp-text-subheading{
+ font-family: Outfit;
+font-size: 18px;
+font-weight: 400;
+line-height: 27.72px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+margin-top: 10px;
+
+}
+.feild-otp-text span{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27.72px;
+    color: black;
+}
+.otp-number{
+    text-align: center;
+    font-size: 15px;
+   
+    margin: 0;
+ 
+}
+.otp-form{
+    margin: 10px 0;
+}
+.feild-otp-input-section{
+    display: flex;
+    justify-content: center;
+
+}
+.feild-otp-input{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    border: 1px solid #FF6000;
+    margin: 0 5px;
+   text-align: center;
+    background-color: transparent;
+    outline: none;
+}
+.feild-otp-texts{
+   display: flex;
+   justify-content:center;
+   align-items: end;
+   gap: 1rem;
+   margin: 1rem 0;
+ 
+   
+
+}
+.feild-otp-button-text{
+    font-size: 10px;
+    color: black;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+
+}
+.feild-otp-btn{
+    all: unset;
+    margin: auto;
+    cursor: pointer;
+    color: #E9890A;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+@media screen and (max-width:500px){
+
+
+    .feild-otp-page{
+        
+        width: 320px;
+       
+        margin: 2rem 0;
+       }
+     
+    
+}

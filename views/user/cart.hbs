@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="/styles/user/cart.css">
+<main>
+    <section class="products-section section-padding">
+
+      <div class="products">
+          <div class="products-head-box">
+             <div class="products-heading">
+               <h2>Cart</h2>
+             </div>
+             <div class="products-btn">
+              <a href="/" all="unset"><button >Add Products</button></a>
+            
+             </div>
+
+          </div>
+          <div  class="products-box">
+            <div class="products-headings">
+                <span class="cart-heading-image">Image</span>
+                <span class="cart-heading-title">Title</span>
+                <span class="cart-heading-price">Price</span>
+                <span class="cart-heading-quantity">Quantity</span>
+                
+                <span class="cart-heading-amount">Amount</span>
+                <span class="cart-heading-button">Remove</span>
+
+            </div>
+            <h1 style="margin-top: 4rem; font-weight:700;">{{message}}</h1>
+             {{#each products }}
+            <div class="products-items">
+                                           {{#if this.images}}
+  {{#each this.images}}
+    {{#if @first}}
+      <span class="cart-item-image">
+        <img src="/{{this}}" alt="{{../title}}" />
+      </span>
+    {{/if}}
+  {{/each}}
+{{/if}}
+                 <span class="cart-item-title">{{this.title}}</span>
+                 <span class="cart-item-price">{{this.price}}</span>
+                 <span class="cart-item-quantity">
+                    <button id="button" class="minus-btn" onclick="updateQuantity(this, -1,'{{this._id}}')">-</button>
+                    <input type="text" class="quantity-input" value="{{this.quantity}}" readonly>
+                    <button id="button" class="plus-btn" onclick="updateQuantity(this, 1,'{{this._id}}')">+</button>
+                 </span>
+
+                <span class="cart-item-amount" >
+                             <input type="text" class="amount-input" value="{{this.amount}}" readonly>
+                 </span>
+                
+                 
+                  <div class="cart-item-button">
+                 
+                    <button class="delete-button"  onclick="removecart('{{this._id}}')" >Remove</button></div></span>
+                
+                  </div>
+              {{/each}}
+              <div class="total-amount">
+                 <span id="total-amount">Total:₹{{totalCartAmount}}</span>
+                </div>
+                <div class="order-btn">
+                <a href="/deliverydetails" all="unset"><button >Place Order</button></a>
+            
+                </div>
+          
+            
+          </div>
+          
+
+      </div>
+
+
+
+    </section>
+</main>
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    calculateTotalAmount();
+  });
+
+  function calculateTotalAmount() {
+    let total = 0;
+    document.querySelectorAll('.amount-input').forEach(input => {
+      total += parseFloat(input.value) || 0;
+    });
+    document.getElementById('total-amount').textContent = `Total: ₹${total.toFixed(2)}`;
+  }
+
+  function updateQuantity(button, increment, productId) {
+    const quantityInput = button.parentElement.querySelector('.quantity-input');
+    const amountInput = button.parentElement.parentElement.querySelector('.amount-input');
+    const price = parseFloat(button.parentElement.parentElement.querySelector('.cart-item-price').textContent);
+
+    let currentQuantity = parseInt(quantityInput.value);
+    if (isNaN(currentQuantity)) currentQuantity = 0;
+
+    const newQuantity = Math.max(1, currentQuantity + increment);
+    quantityInput.value = newQuantity;
+    amountInput.value = (price * newQuantity).toFixed(2);
+
+    calculateTotalAmount();
+
+  
+    jQuery.ajax({
+      url: '/update-cart', 
+      method: 'POST',
+      data: {
+        productId: productId,
+        quantity: newQuantity,
+      },
+      success: (response) => {
+        if (response.status) {
+          console.log('Quantity updated successfully');
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: response.message || 'Failed to update quantity',
+          });
+        }
+      },
+      error: (err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Something went wrong while updating the quantity.',
+        });
+      },
+    });
+  }
+
+  function removecart(productId) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to undo this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3885d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, remove it"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        jQuery.ajax({
+          url: '/removecart',
+          method: 'POST',
+          data: { productId: productId },
+          success: (response) => {
+            if (response) {
+              Swal.fire({
+                title: 'Removed!',
+                text: 'The product has been removed from your cart.',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false,
+              }).then(() => {
+                location.reload();
+                calculateTotalAmount();
+              });
+            }
+          },
+        });
+      }
+    });
+  }
+</script>
+

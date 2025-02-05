@@ -1,0 +1,339 @@
+.products{
+    margin: 5rem 0;
+    width: 100%;
+}
+.products-head-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+  
+ 
+  
+}
+
+.products-heading h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: #212B36;
+}
+.products-btn button{
+    background-color: #EEC200;
+    height: 40px;
+    width: 125px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+}
+
+.products-headings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+.cart-heading-image{
+    font-size: 20px;
+    font-weight: bold;
+    color: #212B36;
+    width: 20%;
+}
+.cart-heading-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #212B36;
+    width: 20%;
+}
+.cart-heading-price{
+    font-size: 20px;
+    font-weight: bold;
+    color: #212B36;
+    width: 15%;
+   
+}
+.cart-heading-quantity{
+    font-size: 20px;
+    font-weight: bold;
+    color: #212B36;
+    width: 20%;
+}
+.cart-heading-amount{
+    font-size: 20px;
+    font-weight: bold;
+    color: #212B36;
+    width: 15%;
+}
+.cart-heading-button{
+    font-size: 20px;
+    font-weight: bold;
+    color: #212B36;
+    width: 10%;
+}
+.products-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+.cart-item-image{
+    font-size: 15px;
+    font-weight:bold;
+    color: #212B36;
+    width: 20%;
+
+}
+.cart-item-image img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+.cart-item-title{
+    font-size: 15px;
+    font-weight: 600;
+    color: #212B36;
+    width: 20%;
+   
+   
+}
+.cart-item-price{
+    font-size: 15px;
+    font-weight: 600;
+    color: #212B36;
+    width: 15%;
+
+   
+}
+.cart-item-quantity{
+    font-size: 15px;
+    font-weight:600;
+    color: #212B36;
+    width: 20%;
+
+}
+.cart-item-amount{
+    font-size: 15px;
+    font-weight:600;
+    color: #212B36;
+    width: 15%;
+ 
+}
+.cart-item-button{
+   
+   
+    width: 10%;
+}
+.delete-button{
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    
+    
+}
+
+  
+  #button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  #button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .quantity-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    pointer-events: none;
+  }
+  .amount-input{
+    width: 60px;
+  }
+  .total-amount {
+    margin-top: 2rem;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .order-btn{
+    text-align: right;
+  }
+  .order-btn button{
+    background-color: #EEC200;
+    color: #212B36;
+    height: 60px;
+    width: 150px;
+    font-size:20px;
+    font-weight: 700;
+    margin-top: 1rem;
+
+    border: none;
+  }
+  .order-btn button:hover{
+    color: black;
+  }
+@media screen and (max-width:900px){
+    .products{
+        margin: 2rem 0;
+        
+    }
+    .products-head-box{
+       margin: 1rem 0;
+      }
+  
+  
+
+}
+@media screen and (max-width:700px){
+   
+    .products-heading h2{
+        font-size: 20px;
+        font-weight: bold;
+        color: #212B36;
+    }
+    .products-btn button{
+      
+        height: 30px;
+        width: 90px;
+        font-size: 12px;
+       
+    }
+    .cart-heading-image,.cart-heading-title,.cart-heading-price,.cart-heading-quantity,.cart-heading-amount,.cart-heading-button{
+        font-size: 13px;
+      
+    }
+    
+   
+    .cart-item-image,.cart-item-title,.cart-item-price,.cart-item-quantity,.cart-item-amount,.cart-item-button{
+        font-size: 13px;
+      
+    }
+    .cart-item-image img{
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    .cart-item-button button{
+      
+        height: 20px;
+        width: 45px;
+        border-radius: 4px;
+        font-size: 9px;
+        font-weight: 500;
+        
+    }
+
+    #button {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+      }
+      
+      #button:hover {
+        background-color: #e0e0e0;
+      }
+      
+      .quantity-input {
+        width: 20px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        pointer-events: none;
+      }
+      .amount-input{
+        width: 50px;
+      }
+      .total-amount {
+        margin-top: 1rem;
+        text-align: right;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      .order-btn button{
+        background-color: #EEC200;
+        color: #212B36;
+        height: 40px;
+        width: 100px;
+        font-size:15px;
+        font-weight: 700;
+        margin-top: 1rem;
+    
+        border: none;
+      }
+   
+
+   
+}
+
+
+/* const shop = async (req, res) => {
+  try {
+    const category = await Catogory.find({});
+
+    // Pagination
+    const page = parseInt(req.query.page) || 1; 
+    const limit = 8;
+    const skip = (page - 1) * limit; 
+
+    let products;
+    let totalProducts;
+
+    if (req.session.filteredProduct) {
+   
+      const filteredProductIds = req.session.filteredProduct.map((p) => p._id);
+
+      products = await Product.find({ _id: { $in: filteredProductIds } })
+        .sort({ createdOn: -1 })
+        .skip(skip)
+        .limit(limit);
+
+      totalProducts = req.session.filteredProduct.length;
+    } else {
+     
+      products = await Product.find({})
+        .sort({ createdOn: -1 })
+        .skip(skip)
+        .limit(limit);
+
+      totalProducts = await Product.countDocuments({});
+    }
+
+   
+    const totalPages = Math.ceil(totalProducts / limit);
+    const totalPagesArray = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  
+    res.render('user/allproducts', {
+      products,
+      category,
+      totalProducts,
+      currentPage: page,
+      totalPages,
+      totalPagesArray,
+    });
+  } catch (error) {
+    console.error('Error in /shop route:', error.message);
+    res.status(500).send('Internal Server Error');
+  }
+};  */
+
+
+

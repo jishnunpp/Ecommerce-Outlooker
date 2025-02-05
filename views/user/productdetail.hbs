@@ -1,0 +1,244 @@
+<link rel="stylesheet" href="/styles/user/productdetails.css">
+<main>
+    <section>
+
+{{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+  
+
+<div class="product-details section-padding">
+  <div class="product-image-section">
+    {{#each product.images}}
+      {{#if @first}}
+       
+        <div id="img-container">
+				<div id="lens"></div>
+				<img id='featured' src="/{{this}}">
+			</div>
+        
+      {{/if}}
+    {{/each}}
+
+    <div class="product-sub-images">
+      {{#each product.images}}
+       
+          <div class="product-sub-image">
+            <img src="/{{this}}" alt="Sub Image" onclick="showImg(this.src)">
+          </div>
+      
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="product-details-section">
+    <div class="product-heading">
+      <h2>{{product.title}}</h2>
+    </div>
+    <div class="product-price-section">
+      <p class="product-price"> ₹{{product.price}}</p>
+      <p class="product-price-offer"> 30%off</p>
+    </div>
+    <div class="product-meterial-section">
+      <p>Material: <span class="product-data">{{product.meterial}}</span></p>
+      <div></div>
+      <p>Category: <span class="product-data">{{product.catogory}}</span></p>
+    </div>
+    <div class="product-rating-section">
+      <p> {{product.rating}}<span class="product-rating"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></span>Rating</p>
+      
+      <p> <span class="product-review">[{{product.review}}reviews]</span></p>
+    </div>
+    <div class="product-description-section">
+      <p>{{product.description}}</p>
+    </div>
+    
+    <div class="product-size-section">
+      <p>Size: <span class="product-data">{{product.size}}</span></p>
+    </div>
+    <div class="product-buttons">
+      <button class="cart-btn" onclick="addToCart('{{product._id}}')">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+          <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708" />
+        </svg>
+        Add to cart
+      </button>
+      <button class="buy-btn" onclick="addToCart('{{product._id}}')">Buy now</button>
+    </div>
+  </div>
+</div>
+
+
+    </section>
+    <section>
+        {{!-- dress section start --}}
+    <section class="dress-section ">
+  <div class="dress-heading-section section-padding">
+  <h2>{{categoryName}} Fashion</h2>
+  <p>Clothing shorts & shirts</p>
+  </div>
+ 
+ <div class="dress-items-section  section-padding">
+    {{#each catogory}}
+      
+    <div class="dress-item">
+    
+      <div class="dress-item-image">
+          <a href="/productdetails/{{this._id}}" class="image-link"></a>
+         {{#each this.images}}
+    {{#if @first}}
+      
+        <img src="/{{this}}" alt="{{../title}}" />
+     
+    {{/if}}
+  {{/each}}
+ </a>
+      </div>
+       
+      <div class="dress-item-details">
+        <div class="dress-item-name">
+          <p>{{this.title}}</p>
+        </div>
+        <div class="dress-item-price">
+          <p class="dress-item-price-amount">₹{{this.price}}</p>
+          <p class="dress-item-price-offer">{{this.offer}}%off</p>
+        </div>
+        <div class="dress-item-buttons">
+          <button class="add-cart-btn"  onclick="addToCart('{{this._id}}')" >Add To Cart <svg id="cart-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/></svg></button>
+          
+         <button class="add-wishlist-btn" 
+        onclick="addToWishlist('{{this._id}}')" 
+        aria-label="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"><path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/></svg></button>
+        </div>
+
+      </div>
+     
+    </div>
+  
+     {{/each}}
+
+  </div>
+
+    </section>
+
+    {{!-- dress section end --}}
+    </section>
+</main>
+
+
+ <script>
+    let bigImg = document.getElementById('featured');
+
+    function showImg(pic){
+        bigImg.src=pic;
+    }
+ </script>
+
+ 
+   <script>
+    document.getElementById('img-container').addEventListener('mouseover', function(){
+    imageZoom('featured')
+    
+})
+
+function imageZoom(){
+	let img = document.getElementById('featured')
+	let lens = document.getElementById('lens')
+
+	lens.style.backgroundImage = `url( ${img.src} )`
+
+	let ratio = 2
+
+	lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+
+	img.addEventListener("mousemove", moveLens)
+	lens.addEventListener("mousemove", moveLens)
+	img.addEventListener("touchmove", moveLens)
+
+	function moveLens(){
+	
+		let pos = getCursor()
+		
+		let positionLeft = pos.x - (lens.offsetWidth / 2)
+		let positionTop = pos.y - (lens.offsetHeight / 2)
+
+		//5
+		if(positionLeft < 0 ){
+			positionLeft = 0
+		}
+
+		if(positionTop < 0 ){
+			positionTop = 0
+		}
+
+		if(positionLeft > img.width - lens.offsetWidth /1 ){
+			positionLeft = img.width - lens.offsetWidth /1
+		}
+
+		if(positionTop > img.height - lens.offsetHeight /1 ){
+			positionTop = img.height - lens.offsetHeight /1
+		}
+
+
+		lens.style.left = positionLeft + 'px';
+		lens.style.top = positionTop + 'px';
+
+		lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' +  (pos.y * ratio) + 'px'
+	}
+
+	function getCursor(){
+
+        let e = window.event
+        let bounds = img.getBoundingClientRect()
+
+        let x = e.pageX - bounds.left
+		let y = e.pageY - bounds.top
+		x = x - window.pageXOffset;
+		y = y - window.pageYOffset;
+		
+		return {'x':x, 'y':y}
+	}
+
+}
+
+imageZoom()
+   </script>
+
+
+ <script>
+  function addToCart(productId) {
+ 
+    const button = document.querySelector(`button[onclick="addToCart('${productId}')"]`);
+    button.disabled = true;
+
+    jQuery.ajax({
+      url: '/addtocart',
+      method: 'POST',
+      data: { productId: productId },
+      success: (response) => {
+        if (response.status) {
+          Swal.fire({
+            title:'Added to cart',
+            text:'the product has been added to your cart',
+            icon:'success',
+            timer:2000
+          })
+        } else {
+          Swal.fire({
+            title:'Already in cart',
+            text:response.message,
+            icon:'info',
+            timer:2000
+          })
+        }
+      },
+      error: (error) => {
+        alert('There was an error. Please try again later.');
+      },
+      complete: () => {
+        
+        button.disabled = false;
+      }
+    });
+  }
+</script>

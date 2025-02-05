@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="/styles/user/otp.css">
+
+<main >
+  {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+
+  {{!-- otp in page start --}}
+  <section class="otp-section section-padding">
+   <div class="feild-otp-page">
+    <div class="otp">
+        <div class="feild-otp-text">
+            <h1>Email Verification</h1>
+            <p class="feild-otp-text-subheading">We will send you a one time password on this <span>Email Address</span></p>
+            <p class="otp-number">{{email}}</p>
+             <p style="text-align: center; color:red">{{message}}</p>
+        </div>
+    
+    
+    <form action="/verify-forgot-otp" method="post" class="otp-form" >
+      <div class="feild-otp-input-section">
+      
+         <input class="feild-forgototp-input"  id="otp-number" name="otp"><br>
+         
+      </div>
+      <div class="feild-otp-texts">
+        <div >
+           <p class="feild-otp-button-text">Do not send OTP</p>
+        </div>
+        <div >
+          <a href="/otp" class="feild-otp-btn">send OTP</a>
+          
+        </div>
+      </div>
+      
+      
+      <button class="otp-btn" type="submit">Submit</button><br>
+    </form>
+   
+  
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- sign in page end --}}
+</main>
+
+
+ 
+
+<script>
+  function validateOtpForm() {
+    const otpInput = document.getElementById('otp-number').value;
+
+  
+    $.ajax({
+      type: "POST",
+      url: "/verify-forgot-otp",
+      data: { otp: otpInput },
+      success: function (response) {
+        if (response.success) {
+          Swal.fire({
+            icon: 'success',
+            title: "OTP verified successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(() => {
+            window.location.href = response.redirectUrl;
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Invalid OTP',
+            text: response.message,
+          });
+        }
+      },
+      error: function () {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Failed to verify OTP. Please try again.',
+        });
+      },
+    });
+
+    return false; 
+  }
+
+
+  document.querySelector('.otp-form').onsubmit = validateOtpForm;
+</script>

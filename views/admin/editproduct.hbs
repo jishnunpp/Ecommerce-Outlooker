@@ -1,0 +1,402 @@
+{{!-- <link rel="stylesheet" href="/styles/admin/editproduct.css">
+<main>
+
+
+
+
+          <h2 class="edit-heading">Edit Product</h2>
+<form action="/admin/product/edit/{{product._id}}" method="post" class="form">
+<div class="form-sections">
+<div class="input-feild">
+ <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{product.title}}" required />
+</div>
+<div class="input-feild">
+     <label for="price">Price:</label>
+    <input type="number" id="price" name="price" value="{{product.price}}" required />
+</div>
+</div>
+<div class="form-sections">
+<div class="input-feild">
+    
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="catogory" value="{{product.catogory}}" required />
+</div>
+<div class="input-feild">
+   
+
+    <label for="category">Meterial:</label>
+    <input type="text" id="category" name="meterial" value="{{product.meterial}}" required /> 
+</div>
+</div>
+<div class="form-sections">
+
+<div class="input-feild">
+    
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" value="{{product.stock}}" required />
+ 
+</div>
+   
+</div>
+
+
+
+   
+
+
+
+  
+<div class="input-feild">
+<button type="submit" class="edit-btn">Save Changes</button>
+</div>
+    
+</form>
+
+</main> --}}
+
+
+
+
+<link rel="stylesheet" href="/styles/admin/addproduct.css">
+<main>
+ 
+  <section class="addproduct-section section-padding">
+    <div class="addproduct-page">
+      
+       
+        
+      
+    <div class="addproduct">
+       <div class="addproduct-heading-section">
+              <h3 class="addproduct-heading">Edit Product</h3>
+        </div>
+    
+    <form  class="addproduct-form"  action="/admin/product/edit/{{product._id}}" method="post" id="form" enctype="multipart/form-data">
+      <div class="input-title-feild">
+      <label  class="input-title" for="login">Title</label><br>
+      <input class="addproduct-input-name" type="text" placeholder=" product title" name="title"  value="{{product.title}}"  ><br>
+
+      </div>
+      <div class="input-title-feild">
+      <label  class="input-title" for="login">Description</label><br>
+      <input class="addproduct-input-name" type="text" placeholder=" product decription" name="description"  value="{{product.description}}"  ><br>
+
+      </div>
+
+       <div class="addproduct-inputs">
+         <div class="input-feild">
+         <label  class="input-title" for="login">Catogory</label><br>
+       
+         <select id="Catogory"name="catogory" class="addproduct-input">
+          <option value="{{product.catogory}}" >{{product.catogory}}</option>
+          {{#each category}}
+           <option value="{{catogoryname}}" >{{catogoryname}}</option>
+         {{/each}} 
+        </select>
+         </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Price</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" product price" name="price" value="{{product.price}}"><br>
+        
+         </div>
+       </div>
+
+        <div class="addproduct-inputs">
+          <div class="input-feild">
+          <label  class="input-title" for="login">Offer</label><br>
+          <input class="addproduct-input" type="number" placeholder=" product offer" name="offer" value="{{product.offer}}" ><br>
+      
+          </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Rating</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" product rating" name="rating" value="{{product.rating}}" ><br>
+   
+         </div>
+       </div>
+       <div class="addproduct-inputs">
+          <div class="input-feild">
+          <label class="input-title" for="login">Review</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" Review" name="review" value="{{product.review}}"><br>
+       
+         </div>
+         <div class="input-feild">
+          <label class="input-title" for="login">Stock</label><br>
+          <input  class="addproduct-input" type="number" placeholder=" Stock" name="stock" value="{{product.stock}}" ><br>
+     
+         </div>
+       </div>
+        <div class="addproduct-inputs">
+          <div class="input-feild">
+          <label  class="input-title" for="login">Size</label><br>
+          <input class="addproduct-input" type="text" placeholder=" product size" name="size" value="{{product.size}}"><br>
+  
+          </div>
+          <div class="input-feild">
+          <label class="input-title" for="login">Meterial</label><br>
+          <input  class="addproduct-input" type="text" placeholder=" product meterial" name="meterial" value="{{product.meterial}}" ><br>
+ 
+         </div>
+       </div>
+
+      
+<div class="addproduct-inputs">
+    <!-- Main Image Section -->
+    <div class="input-feild">
+        <label class="input-title" for="login">Main Image</label><br>
+        <label for="image1" class="custom-file-label">Choose File</label>
+        <span class="file-name" id="fileName1">No file chosen</span>
+        <input type="file" id="image1"value="{{images}}"  name="images" accept="image/*"><br>
+           {{#each this.images}}
+    {{#if @first}}
+        <div id="mainImageWrapper" class="mainImageWrapper" style="margin-top: 10px;">
+            <img id="mainImagePreview" src="/{{this}}" alt="Main Image Preview" >
+            <button id="removeMainImage" class="removeMainImage" type="button" data-path="{{this}}" >Delete</button>
+        </div>
+            {{/if}}
+  {{/each}}
+    </div>
+
+    <!-- Sub Images Section -->
+    <div class="input-feild">
+        <label class="input-title" for="images">Upload Sub Images</label><br>
+        <label for="images" class="custom-file-label">Choose Files</label>
+        <span class="file-name" id="fileNames">No files chosen</span>
+        <input type="file" id="images" name="images" value="{{images}}" accept="image/*" multiple><br>
+        <div id="previewContainer" style="margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap;">
+            {{#each images}}
+             {{#unless @first}}
+            <div class="subImageWrapper">
+                <img src="/{{this}}" alt="Sub Image" >
+                <button type="button" class="removeSubImage" data-path="{{this}}">Delete</button>
+            </div>
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+       
+     
+      <div class="addproduct-edit-btn">
+         <button class="addproduct-btn" type="submit">Submit</button><br>
+      </div>
+      
+      
+    </form>
+     
+
+
+    </div>
+    
+
+   </div>
+  </section>
+ 
+<style>
+    .subImageWrapper {
+   
+    width: 100px;
+    height: 120px;
+   } 
+
+.subImageWrapper img {
+    width: 100%;
+    height: 100px;
+ 
+    border-radius: 3px; 
+
+}
+
+.subImageWrapper button {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background-color:red;
+    color: #fff;
+    
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+   
+}
+
+
+
+/* Add some spacing between sub-images */
+#previewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between subImageWrapper items */
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+#mainImageWrapper {
+   
+    width: 100px;
+    height: 120px;
+   } 
+
+#mainImageWrapper img {
+    width: 100%;
+    height: 100px;
+ 
+    border-radius: 3px; 
+
+}
+
+#mainImageWrapper button {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background-color:red;
+    color: #fff;
+    
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: center;
+   
+}
+</style>
+
+  
+</main>
+
+
+<script>
+    // Main Image Handling
+const mainImageInput = document.getElementById('image1');
+const mainImagePreview = document.getElementById('mainImagePreview');
+const removeMainImageButton = document.getElementById('removeMainImage');
+
+mainImageInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            mainImagePreview.src = e.target.result;
+            mainImagePreview.style.display = 'block';
+            removeMainImageButton.style.display = 'inline-block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('removeMainImage')) {
+    const button = event.target;
+    const imagePath = button.dataset.path;
+
+    if (confirm('Are you sure you want to remove this image?')) {
+      fetch(`/admin/remove-image/${encodeURIComponent(imagePath)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+           
+            const imageWrapper = button.closest('.mainImageWrapper');
+            if (imageWrapper) {
+              imageWrapper.remove();
+            }
+          } else {
+            alert(data.message || 'Failed to remove the image.');
+          }
+        })
+        .catch((err) => {
+          console.error('Error:', err);
+          alert('An error occurred while removing the image.');
+        });
+    }
+  }
+});
+// Sub Images Handling
+const subImagesInput = document.getElementById('images');
+const previewContainer = document.getElementById('previewContainer');
+
+subImagesInput.addEventListener('change', (event) => {
+    const files = Array.from(event.target.files);
+    previewContainer.innerHTML = ''; // Clear existing previews
+    files.forEach((file) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const div = document.createElement('div');
+            div.className = 'subImageWrapper';
+            div.innerHTML = `
+                <img src="${e.target.result}" alt="Sub Image" style="width: 80px; height: 100px;">
+                <button type="button" class="removeSubImage" style="width: 80px; border: none; padding: 5px 10px;">Remove</button>
+            `;
+            previewContainer.appendChild(div);
+        };
+        reader.readAsDataURL(file);
+    });
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('removeSubImage')) {
+    const button = event.target;
+    const imagePath = button.dataset.path;
+
+    if (confirm('Are you sure you want to remove this image?')) {
+      fetch(`/admin/remove-image/${encodeURIComponent(imagePath)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            // Remove the image preview from the UI
+            const imageWrapper = button.closest('.subImageWrapper');
+            if (imageWrapper) {
+              imageWrapper.remove();
+            }
+          } else {
+            alert(data.message || 'Failed to remove the image.');
+          }
+        })
+        .catch((err) => {
+          console.error('Error:', err);
+          alert('An error occurred while removing the image.');
+        });
+    }
+  }
+});
+
+
+</script>
+
+
+<script>
+  document.getElementById('image1').addEventListener('change', function () {
+    const fileInput = this;
+    const fileNameSpan = document.getElementById('fileName1');
+
+    if (fileInput.files && fileInput.files[0]) {
+      fileNameSpan.textContent = fileInput.files[0].name;
+    } else {
+      fileNameSpan.textContent = 'No file chosen';
+    }
+  });
+
+  document.getElementById('images').addEventListener('change', function () {
+    const fileInput = this;
+    const fileNamesSpan = document.getElementById('fileNames');
+
+    if (fileInput.files && fileInput.files.length > 0) {
+      const fileNames = Array.from(fileInput.files).map(file => file.name);
+      fileNamesSpan.textContent = fileNames.join(', ');
+    } else {
+      fileNamesSpan.textContent = 'No files chosen';
+    }
+  });
+</script>
+
+

@@ -1,0 +1,43 @@
+   <link rel="stylesheet" href="/styles/admin/addcatogory.css">
+   {{!-- catogory page start --}}
+  <section class="addcatogory-section section-padding">
+   <div class="addcatogory-page">
+    <div class="addcatogory">
+    <div class="addcatogory-title">
+        <h2>Edit Category</h2>
+    </div>
+    
+    <form action="/admin/catogory/edit/{{category._id}}" method="post" class="catogory-form" onsubmit="return validateCatogory()">
+      
+      <div class="input-feild">
+   
+       <input class="addcatogory-input" type="text" placeholder="Enter new catogory" id="catogory" name="catogoryname" value="{{category.catogoryname}}"><br>
+       <span style="color:red" id="catogory_error" class="error"></span>
+      </div>
+      
+      <div class="addcatogory-btn">
+             <button  type="submit">Add</button>
+      </div>
+      
+     
+    </form>
+   
+  
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- catogory  page end --}}
+
+
+   {{!-- <div class="input-feild">
+          <label class="input-title" for="login">Main image</label><br>
+           
+              <label for="image1" class="custom-file-label">Choose File</label>
+                <span class="file-name" id="fileName1">No file chosen</span>
+               <input type="file" id="image1" name="image1" accept="image/*">
+                 <br>
+             <span style="color:red" id="image1_error" class="error"></span>
+         </div> --}}

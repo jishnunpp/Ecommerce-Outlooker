@@ -1,0 +1,419 @@
+.body{
+    background-color: #F0F2F4;
+}
+/* F0F2F4 */
+.header{
+    background-color:white;
+    width: 100%;
+    position:relative;
+    z-index: 999;
+  
+}
+.section-padding{
+    padding: 0 4rem;
+}
+.navbar-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-section{
+    display: flex;
+    justify-content: space-between;
+    
+   
+}
+.logo{
+    width: 120px;
+    height: 60px;
+
+}
+.menu-section{
+   
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:white;
+
+}
+.search-section{
+    width: 394px;
+    height: 36px;
+    
+    display: flex;
+    
+}
+.search-input{
+    margin: 0;
+    width: 354px;
+    height: 36px;
+    outline: none;
+    border: none;
+    padding: 5px 1rem;
+   
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color:#E7E7E7;
+}
+.search-btn{
+    
+    width: 40px;
+    height: 36px;
+    background-color:#FFA800;
+    
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: none;
+}
+.search-icon{
+    color:white;
+}
+.nav-menu{
+    width: 568px;
+    height: 74px;
+
+}
+.menu-items{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.menu-item{
+    list-style: none;
+    margin:  1rem 0;
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+    color: #000000;
+   
+}
+#menu-icon{
+    color: #000000;
+    margin-right: 5px;
+    height: 30px;
+    width: 21px;
+
+}
+.menu-item span{
+    margin: 0;
+    padding-bottom: 0;
+    font-size: 21px;
+    font-weight: 600;
+  
+}
+a{
+all: unset;
+}
+@media screen and (max-width:1170px){
+    .section-padding{
+        padding: 5px 1rem;
+    }
+    .search-section{
+        width: 294px;
+    }
+    .search-input{
+        
+        width: 254px;
+        
+    }
+    .nav-menu{
+        width: 468px;
+       
+    
+    }
+    .menu-items{
+        justify-content: flex-start;
+    }
+    .menu-item{
+        margin: 1rem 12px;
+    }
+}
+@media screen and (max-width:1000px) {
+    .section-padding{
+        padding: 5px 1rem;
+    }
+    .navbar-section{
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+      
+    }
+    .menu-section{
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 5.5rem;
+        padding-top: 1rem;
+        width: 100%;
+        height: 350px;
+        position: absolute;
+        z-index: 1;
+      
+    }
+    .nav-menu{
+        width: 100%;
+    }
+    .menu-items{
+        flex-direction: column;
+        justify-content: center;
+       
+        
+    }
+    .search-section{
+        width: 100%;
+      
+       
+    }
+    .search-input{
+        width: 90%;
+        
+    }
+    
+}
+
+
+.admin-header{
+    background-color:white;
+   padding: 8px 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+   gap: 3rem;
+}
+.logo img{
+    width: 120px;
+    height: 60px;
+    
+}
+.admin-text h2{
+    font-weight: 700;
+  font-style:italic;
+  font-size: 35px;
+  color: #0C2146;
+}
+
+
+
+
+/* footer */
+
+.footer-section{
+    background-color: white;
+    padding: 4rem 4rem;
+}
+.footer-items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer-item {
+    width: 250px;
+}
+.footer-item img{
+    height: 100px;
+    width: 120px;
+}
+.footer-item p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.footer-item ul{
+    padding: 0;
+
+}
+.footer-item li {
+    list-style: none;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 5px 0;
+   
+}
+
+@media screen and (max-width:1050px){
+    .footer-item {
+        width: 200px;
+    }
+   
+}
+
+@media screen and (max-width:600px){
+    .footer-section{
+        
+        padding: 4rem 1rem;
+    }
+    .footer-items{
+        flex-direction: column;
+        
+    }
+}
+
+
+
+/* dress card */
+.dress-section{
+    margin: 1rem 0;
+}
+.dress-heading-section h2{
+    font-size: 32px;
+    font-weight: 700;
+}
+.dress-items-section{
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.dress-item{
+    width: 230px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dress-item-image{
+   
+   position: relative;
+}
+.image-link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+.dress-item-image img{
+    width: 100%;
+    height: 230px;
+    border-radius: 8px;
+ 
+}
+/* .dress-item-image img:hover{
+    transform: scale(1.2);
+    
+  } */
+.dress-item-details{
+    padding: 1rem;
+}
+.dress-item-name{
+    display: flex;
+
+}
+.dress-item-name p{
+    margin: 0;
+    font-size: 18px; 
+    font-weight: 600;  
+}
+.dress-item-price{
+    display: flex;
+    gap: 1rem;
+  
+}
+.dress-item-price-amount{
+    margin: 5px 0;
+    font-size: 17px;
+    font-weight: 500;
+}
+.dress-item-price-offer{
+    margin: 5px 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: green;
+}
+.dress-item-buttons{
+    margin-top: 10px;
+    display: flex;
+   justify-content: space-between;
+}
+.add-cart-btn{
+    border: 2px solid #FF6000;
+    color: #FF6000;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    background-color:transparent;
+}
+#cart-icon{
+    margin-left: 10px;
+    width: 13px;
+    height: 13px;
+}
+.add-wishlist-btn{
+    color:red;
+    border: none;
+}
+@media screen and (max-width:800px){
+    .dress-item{
+        width: 220px;
+       
+    
+    }
+    .dress-item-image img{
+       
+        height: 210px;
+    }
+    .dress-heading-section h2{
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .dress-items-section{
+        margin: 1rem 0;
+        
+    }
+    .dress-item-details{
+        padding: 5px;
+    }
+    .dress-item-price-amount{
+        
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+    }
+    .dress-item-price-offer{
+        
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+    }
+    .dress-item-buttons{
+        margin-top: 5px;
+   
+    }
+   
+    .add-cart-btn{
+       
+        font-size: 10px;
+    
+        width: 100px;
+        height: 25px;
+       
+    }
+}
+@media screen and (max-width:700px){
+
+   
+    .dress-item{
+        width: 170px;
+        margin: 0;
+       
+    }
+    .dress-item-image img{
+       
+        height: 150px;
+    }
+    
+    
+
+}
+
+
+
+
+.dress-item:hover {
+    -ms-transform: scale(1.1); 
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); 
+  }

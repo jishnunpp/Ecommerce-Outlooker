@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="/styles/user/login.css">
+
+<main style="background-color: C7D2D6;">
+   {{!-- header section start --}}
+  {{> userheader}}
+  {{!-- header section end --}}
+
+
+  {{!-- sign in page start --}}
+  <section class="login-section section-padding">
+   <div class="login-page">
+    <div class="login">
+      <h1 class="login-heading">
+       Login
+    </h1>
+    <p style="color: red;">{{message}}</p>
+     <p style="color: green;">{{newuser}}</p>
+    <form action="/login" method="post" class="login-form" onsubmit="return validateLogin()">
+      <div class="input-feild">
+      <label  class="input-title" for="login" >Email</label><br>
+      <input class="login-input" type="text" placeholder="username@gmail.com" id="email" name="email"><br>
+       <span style="color:red" id="email_error" class="error"></span>
+      </div>
+      <div class="input-feild">
+      <label class="input-title" for="login">Password</label><br>
+      <input  class="login-input" type="password" placeholder="password" id="password" name="password"><br>
+      <span style="color:red" id="password_error" class="error"></span>
+      </div>
+      
+      
+      <button class="login-btn" type="submit">Login</button><br>
+    </form>
+    <a href="/forgot-password" style="all: unset;"><p class="forgot-text">Forgot Password</p></a>
+    <div class="login-options">
+        
+
+      <div>
+        <a href="/auth/google" style="all: unset;"><p class="login-text">Login with google</p></a>
+      </div>
+      <div>
+        <a href="/otp" style="all: unset;"><p class="login-text">Login with OTP</p></a>
+      </div>
+    </div>
+    <a href="/signup" style="all: unset;"><p class="login-text">create new Account ?</p></a>
+
+    </div>
+    
+
+   </div>
+  </section>
+  {{!-- sign in page end --}}
+</main>
+
+
+<script>
+    function validateLogin() {
+      let isValid = true;
+
+      // Get form values
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Error spans
+      const emailError = document.getElementById("email_error");
+      const passwordError = document.getElementById("password_error");
+
+      // Clear previous error messages
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email === "") {
+        emailError.textContent = "Email is required.";
+        isValid = false;
+      } else if (!emailRegex.test(email)) {
+        emailError.textContent = "Enter a valid email address.";
+        isValid = false;
+      }
+
+      // Password validation
+      if (password === "") {
+        passwordError.textContent = "Password is required.";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
