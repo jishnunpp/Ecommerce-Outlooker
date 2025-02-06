@@ -598,7 +598,7 @@ catch(error){
 const orders = async (req, res) => {
   try {
     
-    const orderHistory = await Orders.find()
+    const orderHistory = await Orders.find().sort({ 'order.createdAt': -1 });
 
    
     const allOrders = orderHistory.map((orderObj) => {
