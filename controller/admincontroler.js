@@ -154,7 +154,7 @@ const loadproductEdit= async (req, res) => {
       const product = await Product.findById(req.params.id);
       const images=product.images
       const filteredCategories = category.filter(cat => cat.catogoryname !== product.catogory);
-      res.render('admin/editProduct', { product ,category:filteredCategories,images});
+      res.render('admin/editproduct', { product ,category:filteredCategories,images});
   } catch (err) {
       res.status(500).send('Error loading product for editing: ' + err.message);
   }

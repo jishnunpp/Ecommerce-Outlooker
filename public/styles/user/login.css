@@ -91,7 +91,9 @@
         height: 450px;
        
     }
+    
     .login-heading{
+        font-size: 30px;
         margin: 0;
     }
 }
