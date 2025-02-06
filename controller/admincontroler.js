@@ -437,6 +437,7 @@ const Categorysearch = async (req, res) => {
 
 
 
+  
 // banner functions
 
 const  banner= async(req,res)=>{
