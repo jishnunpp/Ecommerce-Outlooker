@@ -13,11 +13,7 @@ passport.use(new googleStrategy({
 
 
 async (accessToken,refreshToken,profile,done)=>{
-    console.log("NODE_ENV:", process.env.NODE_ENV);
-console.log("Callback URL:", process.env.NODE_ENV === "production"
-    ? "https://outlooker.shop/auth/google/callback"
-    : "http://localhost:5000/auth/google/callback"
-);
+ 
     try {
         
         let user = await User.findOne({googleid:profile.id});
