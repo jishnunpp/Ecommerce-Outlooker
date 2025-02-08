@@ -6,7 +6,9 @@ const googleStrategy = require('passport-google-oauth20').Strategy
 passport.use(new googleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL:"https://outlooker.shop/auth/google/callback",
+    callbackURL: process.env.NODE_ENV === "production"
+        ? "https://outlooker.shop/auth/google/callback"
+        : "http://localhost:5000/auth/google/callback"
 },
 
 async (accessToken,refreshToken,profile,done)=>{
