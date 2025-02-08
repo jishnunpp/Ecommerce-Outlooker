@@ -232,11 +232,21 @@ imageZoom()
           })
         }
       },
-      error: (error) => {
-        alert('There was an error. Please try again later.');
+    error: (error) => {
+        let errorMessage = 'Something went wrong. Please try again.';
+        
+        if (error.responseJSON && error.responseJSON.message) {
+          errorMessage = error.responseJSON.message;
+        }
+
+        Swal.fire({
+          title: 'Please Login',
+          text: errorMessage,
+          icon: 'info',
+          timer: 2000
+        });
       },
       complete: () => {
-        
         button.disabled = false;
       }
     });
